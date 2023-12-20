@@ -1,3 +1,6 @@
+// styles
+import './home.css'
+
 // components
 import { Box } from '../components/Box'
 
