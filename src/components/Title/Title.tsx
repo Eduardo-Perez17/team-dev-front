@@ -1,7 +1,7 @@
 import React from 'react'
 
 // commons
-import type { PropsTitle } from '@/commons'
+import type { PropsTitle } from '@/commons/interface'
 
 // constants
 import { sizeElement } from '@/constants'

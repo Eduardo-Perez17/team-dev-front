@@ -1,0 +1,10 @@
+.footer {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer_network:hover { 
+    color: var(--color-blue);
+}

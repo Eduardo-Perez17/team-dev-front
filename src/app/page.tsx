@@ -1,7 +1,11 @@
+// components
+import { Box } from '../components/Box'
+
 export default function Home() {
+
 	return (
-		<div>
-			<h1>Hola mundo</h1>
-		</div>
+		<Box className='home'>
+			<h1>Este es el home</h1>
+		</Box>
 	);
 }
