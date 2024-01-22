@@ -4,3 +4,6 @@ export { NOT_FOUND } from './path.constants';
 
 // Endpoints
 export { LOGIN_ENDPOINT } from './endpoints.constants';
+
+// Others
+export { sizeElement } from './sizeElements.constants';

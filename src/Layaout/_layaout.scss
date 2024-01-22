@@ -1,0 +1,9 @@
+.grid_father {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+}
+
+.grid_son {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
