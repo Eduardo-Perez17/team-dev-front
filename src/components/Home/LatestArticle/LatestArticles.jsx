@@ -7,6 +7,7 @@ import { usePosts } from '../../../hook/usePosts';
 import { LatestArticlePost } from '../LatestArticlePost';
 import { PreviousArticle } from '../PreviousArticle';
 import { Spinning } from '../../Loaders/Spinning';
+import { ErrorFailedFetch } from '../../errors';
 import { Title } from '../../Title';
 import { Box } from '../../Box';
 
@@ -14,7 +15,7 @@ import { Box } from '../../Box';
 import './_latestArticle.scss';
 
 export const LatestArticles = () => {
-	const { getAllPosts, allPosts, loading } = usePosts();
+	const { getAllPosts, allPosts, loading, error } = usePosts();
 
 	useEffect(() => {
 		getAllPosts();
@@ -23,7 +24,7 @@ export const LatestArticles = () => {
 	return (
 		<Box className='latest_article'>
 			<Box className='latest_article_title'>
-				<Title title='md'>Últimos artículos</Title>
+				<Title title='lg'>Últimos artículos</Title>
 			</Box>
 
 			{loading ? (
@@ -31,10 +32,16 @@ export const LatestArticles = () => {
 					<Spinning />
 				</Box>
 			) : (
-				<Box className='latest_article_posts'>
-					<LatestArticlePost allPosts={allPosts} />
-					<PreviousArticle />
-				</Box>
+				<>
+					{!error ? (
+						<Box className='latest_article_posts'>
+							<LatestArticlePost allPosts={allPosts} />
+							<PreviousArticle />
+						</Box>
+					) : (
+						<ErrorFailedFetch />
+					)}
+				</>
 			)}
 		</Box>
 	);

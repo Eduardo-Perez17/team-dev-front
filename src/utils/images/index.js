@@ -1,9 +1,10 @@
 // Header
-import logoLight from '../../../public/logo_team_dev_light_escuela_software_desarrollo_programacion.png';
-import logoDark from '../../../public/logo_team_dev_dark_escuela_software_desarrollo_programacion.png';
-import sun from '../../../public/sol_team_dev_light_escuela_software_desarrollo_programacion.png';
-import luna from '../../../public/luna_team_dev_light_escuela_software_desarrollo_programacion.png';
-import miniDev from '../../../public/minidev-this-is-fine.png';
+import logoLight from '../../assets/image/logo_team_dev_light_escuela_software_desarrollo_programacion.png';
+import logoDark from '../../assets/image/logo_team_dev_dark_escuela_software_desarrollo_programacion.png';
+import sun from '../../assets/image/sol_team_dev_light_escuela_software_desarrollo_programacion.png';
+import luna from '../../assets/image/luna_team_dev_light_escuela_software_desarrollo_programacion.png';
+import miniDev from '../../assets/image/minidev-this-is-fine.png';
+import crying from '../../assets/image/crying.png';
 
 export const LOGO_LIGHT = {
 	img: logoLight,
@@ -28,4 +29,9 @@ export const SUN = {
 export const MINI_DEV = {
 	img: miniDev,
 	alt: 'mini dev',
+};
+
+export const CRYING = {
+	img: crying,
+	alt: 'emoji llorando',
 };
