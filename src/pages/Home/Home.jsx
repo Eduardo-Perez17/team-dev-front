@@ -1,8 +1,18 @@
+// Home
+import { LatestArticles } from '../../components/Home';
+
+// Components
+import { Box } from '../../components/Box';
+
 // Styles
 import './_home.scss';
 
 const Home = () => {
-	return <div className='home'>Home</div>;
+	return (
+		<Box className='home'>
+			<LatestArticles />
+		</Box>
+	);
 };
 
 export default Home;

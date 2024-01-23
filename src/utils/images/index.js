@@ -3,6 +3,7 @@ import logoLight from '../../../public/logo_team_dev_light_escuela_software_desa
 import logoDark from '../../../public/logo_team_dev_dark_escuela_software_desarrollo_programacion.png';
 import sun from '../../../public/sol_team_dev_light_escuela_software_desarrollo_programacion.png';
 import luna from '../../../public/luna_team_dev_light_escuela_software_desarrollo_programacion.png';
+import miniDev from '../../../public/minidev-this-is-fine.png';
 
 export const LOGO_LIGHT = {
 	img: logoLight,
@@ -22,4 +23,9 @@ export const LUNA = {
 export const SUN = {
 	img: sun,
 	alt: 'Sol modo claro',
+};
+
+export const MINI_DEV = {
+	img: miniDev,
+	alt: 'mini dev',
 };

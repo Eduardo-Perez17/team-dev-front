@@ -1,8 +1,15 @@
 // Components
-import { RoutesApp } from "./RoutesApp";
+import { RoutesApp } from './RoutesApp';
+
+// Context
+import { UserContextProvider } from './context/UserContext';
 
 function App() {
-  return <RoutesApp />;
+	return (
+		<UserContextProvider>
+			<RoutesApp />
+		</UserContextProvider>
+	);
 }
 
 export default App;

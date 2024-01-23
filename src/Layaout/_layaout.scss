@@ -24,4 +24,22 @@
 .grid-son {
 	grid-column-start: 2;
 	grid-column-end: 3;
+
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+// Tags
+
+.tags {
+	font-weight: bold;
+    padding: 1px 10px;
+    width: max-content;
+    border-radius: 30px;
+    text-transform: capitalize;
+}
+
+.javascript {
+	background-color: #ead12f
 }
