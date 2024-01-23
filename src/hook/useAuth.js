@@ -1,7 +1,7 @@
 import { useContext, useCallback, useState } from 'react';
 
 // Context
-import ContextUser from '../context/userContext';
+import ContextUser from '../context/UserContext.jsx';
 
 // Services
 import { API_PUBLIC } from '../services/api.js';
@@ -34,14 +34,10 @@ export const useAuth = () => {
 			window.localStorage.setItem('jwt', res.access_token);
 			window.localStorage.setItem('user', JSON.stringify(res.user));
 
-			console.log(email, password);
-			console.log(res.user);
-
 			setUser(res.user);
 			setJWT(res.access_token);
 			return true;
 		} catch (err) {
-			console.log(err);
 			return false;
 		} finally {
 			setLoadingAuth(false);

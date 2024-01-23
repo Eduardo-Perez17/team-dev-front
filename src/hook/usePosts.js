@@ -7,13 +7,10 @@ import { API_PUBLIC } from '../services/api';
 import { POSTS_ENDPOINT } from '../utils/constants';
 
 // Context
-import UserContext from '../context/userContext';
+import ContextUser from '../context/UserContext';
 
 export const usePosts = () => {
-	const { jwt, user } = useContext(UserContext);
-
-	console.log(jwt);
-	console.log(user);
+	const { jwt } = useContext(ContextUser);
 
 	const [loading, setLoading] = useState(false);
 	const [allPosts, setAllPosts] = useState([]);
@@ -31,8 +28,16 @@ export const usePosts = () => {
 				throw new Error(response.message);
 			}
 
-			console.log(response);
-			setAllPosts(response);
+			const formattedData = await response?.data?.map(item => {
+				const updatedAt = new Date(item.updatedAt).toLocaleDateString('es-ES', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				});
+				return { ...item, updatedAt };
+			});
+
+			setAllPosts(formattedData);
 			setLoading(false);
 			return response;
 		} catch (error) {
