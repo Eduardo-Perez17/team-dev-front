@@ -1,9 +1,27 @@
+@import '../assets/vars.scss';
+
 .grid-father {
-    display: grid;
-    grid-template-columns: 30px 1fr 30px;
+	display: grid;
+	grid-template-columns: 30px 1fr 30px;
+
+	@media screen and (min-width: $width-mobile-big) and (max-width: $width-tablet-mini) {
+		grid-template-columns: 60px 1fr 60px;
+	}
+
+    @media screen and (min-width: $width-tablet-mini) and (max-width: $width-tablet-big) {
+		grid-template-columns: 80px 1fr 80px;
+	}
+
+    @media screen and (min-width: $width-tablet-big) and (max-width: $width-monitor-mini) {
+		grid-template-columns: 100px 1fr 100px;
+	}
+
+    @media screen and (min-width: $width-monitor-mini)  {
+		grid-template-columns: 120px 1fr 120px;
+	}
 }
 
 .grid-son {
-    grid-column-start: 2;
-    grid-column-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 3;
 }

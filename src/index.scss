@@ -28,6 +28,16 @@ body::before {
     z-index: 1;
 }
 
+::-webkit-scrollbar {
+    width: 6px;     /* Tamaño del scroll en vertical */
+    height: 6px;    /* Tamaño del scroll en horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-light;
+    border-radius: 4px;
+}
+
 .input {
     padding: 14px 20px;
     width: 100%;
@@ -58,4 +68,14 @@ input {
 
 .button:hover {
     box-shadow: 0 10px 30px $shadow-dark;
+}
+
+a {
+    color: $color-light;
+    transition: .2s color ease;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-blue;
+    }
 }
