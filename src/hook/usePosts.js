@@ -14,7 +14,7 @@ export const usePosts = () => {
 
 	const [loading, setLoading] = useState(false);
 	const [allPosts, setAllPosts] = useState([]);
-	const [error, setError] = useState();
+	const [error, setError] = useState(false);
 
 	const getAllPosts = async () => {
 		try {
@@ -23,7 +23,7 @@ export const usePosts = () => {
 			const response = await API_PUBLIC({ endpoint: POSTS_ENDPOINT, jwt });
 
 			if (response?.statusCode && response?.statusCode !== 200) {
-				setError(response);
+				setError(true);
 				setLoading(false);
 				throw new Error(response.message);
 			}
@@ -41,6 +41,7 @@ export const usePosts = () => {
 			setLoading(false);
 			return response;
 		} catch (error) {
+			setError(true);
 			throw new Error(error.message);
 		} finally {
 			setLoading(false);
