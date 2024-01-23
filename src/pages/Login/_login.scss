@@ -1,40 +1,44 @@
+@import '../../assets/vars.scss';
+
 .login {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
+	display: flex;
+	gap: 100px;
+	align-items: center;
+	justify-content: center;
+	min-height: 75vh;
 }
 
 .login_content {
-    max-width: 400px;
+	max-width: 400px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }
 
 .login_content .login_content_title {
-    font-size: 50px;
-    text-shadow: 0 0 20px var(--color-light);
+	font-size: 50px;
+	text-shadow: 0 0 20px $color-light;
 }
 
 .login_content .login_content_paragraph {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .login_content .login_content_paragraph span {
-    color: var(--color-blue);    
+	color: $color-blue;
 }
 
-
 .login .login_form form {
-    display: grid;
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
+	display: grid;
+	gap: 25px;
+	justify-content: center;
+	align-items: center;
 }
 
 .login .login_form form label {
-    display: flex;
-    font-weight: bold;
-    gap: 8px;
-    flex-direction: column;
-    font-size: 18px;
+	display: flex;
+	font-weight: bold;
+	gap: 8px;
+	flex-direction: column;
+	font-size: 18px;
 }

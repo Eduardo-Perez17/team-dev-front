@@ -1,20 +1,14 @@
+@import './assets/vars.scss';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-	--background-dark: #20252c;
-	--color-light: #fff;
-    --dark-color-hover: #3c4654;
-    --color-blue: #09f;
-    --shadow-dark:  rgba(0,0,0,.3);
-}
-
 body {
-	background-color: var(--background-dark);
-	color: var(--color-light);
+	background-color: $background-dark;
+	color: $color-light;
 
     display: flex;
     gap: 30px;
@@ -23,15 +17,15 @@ body {
 }
 
 body::before {
-	content: '';
-	background: rgb(0 153 255/0.1);
-	filter: blur(100px);
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	left: -50px;
-	top: 100px;
-	z-index: -1;
+    content: '';
+    background: rgb(0 153 255/.1);
+    filter: blur(100px);
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    z-index: 1;
 }
 
 .input {
@@ -40,24 +34,28 @@ body::before {
     outline: none;
     border: none;
     border-radius: 12px;
-    background-color: var(--shadow-dark);
+    background-color: $shadow-dark;
     font-weight: 400;
     font-size: 16px;
-    color: var(--color-light);
+    color: $color-light;
+}
+
+input {
+    color: $color-light;
 }
 
 .button {
-    background-color: var(--color-blue);
-    color: var(--color-light);
+    background-color: $color-blue;
+    color: $color-light;
     border: none;
-    padding: 8px 20px;
+    padding: 14px 20px;
     border-radius: 10px;
-    box-shadow: 0 20px 60px var(--shadow-dark);
+    box-shadow: 0 20px 60px $shadow-dark;
     font-weight: bold;
     cursor: pointer;
     transition: .2s box-shadow ease;
 }
 
 .button:hover {
-    box-shadow: 0 10px 30px var(--shadow-dark);
+    box-shadow: 0 10px 30px $shadow-dark;
 }
