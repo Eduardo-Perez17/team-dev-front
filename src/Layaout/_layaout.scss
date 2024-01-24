@@ -13,11 +13,11 @@
 	}
 
     @media screen and (min-width: $width-tablet-big) and (max-width: $width-monitor-mini) {
-		grid-template-columns: 100px 1fr 100px;
+		grid-template-columns: 120px 1fr 120px;
 	}
 
     @media screen and (min-width: $width-monitor-mini)  {
-		grid-template-columns: 120px 1fr 120px;
+		grid-template-columns: 200px 1fr 200px;
 	}
 }
 

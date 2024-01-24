@@ -1,4 +1,10 @@
-const RightArrow = ({ fill, height = '40', width = '40', className }) => {
+const RightArrow = ({
+	fill,
+	height = '40',
+	width = '40',
+	className,
+	onClick,
+}) => {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -6,6 +12,7 @@ const RightArrow = ({ fill, height = '40', width = '40', className }) => {
 			width={width}
 			height={height}
 			className={className}
+			onClick={onClick}
 		>
 			<path
 				fill={fill}

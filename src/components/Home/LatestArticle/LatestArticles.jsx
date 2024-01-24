@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Hooks
 import { usePosts } from '../../../hook/usePosts';
 
 // Components
 import { LatestArticlePost } from '../LatestArticlePost';
-import { PreviousArticle } from '../PreviousArticle';
+import { PaginationArticle } from '../PaginationArticle';
 import { Spinning } from '../../Loaders/Spinning';
 import { ErrorFailedFetch } from '../../errors';
 import { Title } from '../../Title';
@@ -16,10 +16,19 @@ import './_latestArticle.scss';
 
 export const LatestArticles = () => {
 	const { getAllPosts, allPosts, loading, error } = usePosts();
+	const [pagePagination, setPagePagination] = useState(1);
+
+	const paginationIncrement = () => {
+		setPagePagination(pagePagination + 1);
+	};
+
+	const paginationDecrement = () => {
+		setPagePagination(pagePagination - 1);
+	};
 
 	useEffect(() => {
-		getAllPosts();
-	}, []);
+		getAllPosts({ page: pagePagination, limit: 7 });
+	}, [pagePagination]);
 
 	return (
 		<Box className='latest_article'>
@@ -36,7 +45,12 @@ export const LatestArticles = () => {
 					{!error ? (
 						<Box className='latest_article_posts'>
 							<LatestArticlePost allPosts={allPosts} />
-							<PreviousArticle />
+							<PaginationArticle
+								paginationIncrement={paginationIncrement}
+								paginationDecrement={paginationDecrement}
+								pagePagination={pagePagination}
+								allPosts={allPosts}
+							/>
 						</Box>
 					) : (
 						<ErrorFailedFetch />

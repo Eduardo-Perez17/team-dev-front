@@ -47,28 +47,43 @@
 
 			.latest_article_post_content_date_tag {
 				display: flex;
-				align-items: flex-end;
+				flex-direction: column;
 				gap: 12px;
+
+				@media screen and (min-width: $width-mobile-tablet-media) {
+					flex-direction: initial;
+					align-items: flex-end;
+				}
 			}
 		}
 
-        .latest_previous_article {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            color: $color-blue; 
-            width: max-content;
-            cursor: pointer;
-            
-            .right_arrow {
-			    transition: 0.2s transform ease;
-            }
-            
-            &:hover {
-                .right_arrow {
-				transform: translateX(2px);
-                }
-            }
-        }
+		.pagination {
+			display: flex;
+			gap: 20px;
+		}
+
+		.latest_previous_article {
+			display: flex;
+			align-items: center;
+			font-weight: bold;
+			color: $color-blue;
+			width: max-content;
+			cursor: pointer;
+
+			.right_arrow,
+			.left_arrow {
+				transition: 0.2s transform ease;
+			}
+
+			&:hover {
+				.right_arrow {
+					transform: translateX(2px);
+				}
+
+				.left_arrow {
+					transform: translateX(-2px);
+				}
+			}
+		}
 	}
 }
