@@ -1,9 +1,28 @@
 @import '../../../assets/vars.scss';
 
 .footer {
-	margin-bottom: 30px;
+
 	display: flex;
-	gap: 30px;
-	justify-content: center;
-	align-items: center;
+	gap: 10px;
+	flex-direction: column;
+
+	.footer_anchor{
+		display: flex;
+		gap: 30px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer-credits, .footer-credits a  {
+		
+		text-align: center;
+		color: #ffffffa7;
+
+		a:hover {
+			color: #09f;
+		}
+	}
+	
+	
 }
+
