@@ -6,6 +6,9 @@ import { API_PUBLIC } from '../services/api';
 // Endpoints
 import { POSTS_ENDPOINT } from '../utils/constants';
 
+// Helpers
+import { createQueryString } from '../utils/helpers/createQuery';
+
 // Context
 import ContextUser from '../context/UserContext';
 
@@ -16,11 +19,14 @@ export const usePosts = () => {
 	const [allPosts, setAllPosts] = useState([]);
 	const [error, setError] = useState(false);
 
-	const getAllPosts = async () => {
+	const getAllPosts = async ({ page = 1, limit = 7 }) => {
 		try {
 			setLoading(true);
-
-			const response = await API_PUBLIC({ endpoint: POSTS_ENDPOINT, jwt });
+			const query = createQueryString({ page, limit });
+			const response = await API_PUBLIC({
+				endpoint: `${POSTS_ENDPOINT}?${query}`,
+				jwt,
+			});
 
 			if (response?.statusCode && response?.statusCode !== 200) {
 				setError(true);
@@ -28,7 +34,7 @@ export const usePosts = () => {
 				throw new Error(response.message);
 			}
 
-			const formattedData = await response?.data?.map(item => {
+			const formattedData = await response?.data?.data?.map(item => {
 				const updatedAt = new Date(item.updatedAt).toLocaleDateString('es-ES', {
 					year: 'numeric',
 					month: 'long',
