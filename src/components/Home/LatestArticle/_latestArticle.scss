@@ -39,6 +39,12 @@
 				}
 			}
 
+			.latest_article_post_content {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
 			.latest_article_post_content_date_tag {
 				display: flex;
 				align-items: flex-end;
