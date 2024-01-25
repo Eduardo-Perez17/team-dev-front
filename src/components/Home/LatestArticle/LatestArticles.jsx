@@ -11,6 +11,9 @@ import { ErrorFailedFetch } from '../../errors';
 import { Title } from '../../Title';
 import { Box } from '../../Box';
 
+// Contants
+import { TYPE_CONSTANTS } from '../../../utils/constants';
+
 // Styles
 import './_latestArticle.scss';
 
@@ -27,7 +30,11 @@ export const LatestArticles = () => {
 	};
 
 	useEffect(() => {
-		getAllPosts({ page: pagePagination, limit: 7 });
+		getAllPosts({
+			page: pagePagination,
+			limit: 7,
+			search: TYPE_CONSTANTS.NORMAL,
+		});
 	}, [pagePagination]);
 
 	return (
