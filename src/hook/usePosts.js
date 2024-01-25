@@ -19,10 +19,10 @@ export const usePosts = () => {
 	const [allPosts, setAllPosts] = useState([]);
 	const [error, setError] = useState(false);
 
-	const getAllPosts = async ({ page = 1, limit = 7 }) => {
+	const getAllPosts = async ({ page = 1, limit = 7, search }) => {
 		try {
 			setLoading(true);
-			const query = createQueryString({ page, limit });
+			const query = createQueryString({ page, limit, search });
 			const response = await API_PUBLIC({
 				endpoint: `${POSTS_ENDPOINT}?${query}`,
 				jwt,

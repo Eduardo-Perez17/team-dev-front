@@ -1,0 +1,4 @@
+export const TYPE_CONSTANTS = {
+	NORMAL: 'NORMAL',
+	COURSE: 'COURSE',
+};
