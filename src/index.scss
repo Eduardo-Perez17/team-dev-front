@@ -79,3 +79,13 @@ a {
         color: $color-blue;
     }
 }
+
+.paragraph_blue {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	color: $color-blue;
+	width: max-content;
+	cursor: pointer;
+
+}

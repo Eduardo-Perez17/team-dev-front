@@ -40,26 +40,47 @@
     text-transform: capitalize;
 }
 
-.javascript {
-	background-color: #ead12f
-}
 
 .css {
 	background-color: #0e76bb;
+}
+
+.course_css, .course_react {
+	background-image: linear-gradient(to right bottom,#70a9f2,#5c91da,#477bc2,#3264ab,#1a4f94);
 }
 
 .git {
 	background-color: #f65626;
 }
 
-.react {
-	background-color: #35a6f1;
+.course_git {
+	background-image: linear-gradient(to right bottom,#f4827c,#e16e67,#ce5a52,#bb463e,#a8312b);
 }
 
 .html {
 	background-color: #e03e0c;
 }
 
+.course_html {
+	background-image: linear-gradient(to right bottom,#fba97e,#fa9c6a,#f88e57,#f58043,#f2722e);
+}
+
 .nest {
 	background-color: #ed2945;
+}
+
+.course_nest {
+	background-image: linear-gradient(to right bottom,#fd5f88,#ea4e73,#d63c60,#c3294c,#af113a);
+}
+
+.javascript {
+	background-color: #ead12f
+}
+
+.course_javascript {
+	background-image: linear-gradient(to right bottom,#ffed76,#e3d05c,#c7b443,#ab9929,#907f08);
+}
+
+.react {
+	background-color: #35a6f1;
 }

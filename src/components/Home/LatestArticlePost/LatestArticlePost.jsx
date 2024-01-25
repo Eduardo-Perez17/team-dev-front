@@ -1,34 +1,16 @@
-// Images
-import { MINI_DEV } from '../../../utils/images';
-
 // Components
+import { ArticlePostsImage } from '../ArticlePostsImage';
 import { Paragraph } from '../../Paragraph';
 import { Title } from '../../Title';
 import { Box } from '../../Box';
 
 const LatestArticlePost = ({ allPosts }) => {
-	console.log(allPosts);
-
 	return (
 		<>
 			{allPosts &&
 				allPosts?.map(post => (
 					<Box className='latest_article_post' key={post.id}>
-						<Box className='latest_article_post_image'>
-							{post?.image?.url ? (
-								<img
-									src={post?.image?.url}
-									alt={post?.image?.url}
-									className='latest_article_post_image_item'
-								/>
-							) : (
-								<img
-									src={MINI_DEV.img}
-									alt={MINI_DEV.alt}
-									className='latest_article_post_image_item latest_article_post_image_item_default'
-								/>
-							)}
-						</Box>
+						<ArticlePostsImage post={post} />
 						<Box className='latest_article_post_content'>
 							<Title title='md'>{post.title}</Title>
 							<Box className='latest_article_post_content_date_tag'>

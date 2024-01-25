@@ -6,10 +6,13 @@ import { usePosts } from '../../../hook/usePosts';
 // Components
 import { LatestArticlePost } from '../LatestArticlePost';
 import { PaginationArticle } from '../PaginationArticle';
-import { Spinning } from '../../Loaders/Spinning';
-import { ErrorFailedFetch } from '../../errors';
-import { Title } from '../../Title';
 import { Box } from '../../Box';
+
+// Errors
+import { ErrorFailedFetch } from '../../errors';
+
+// Loaders
+import { Spinning } from '../../Loaders/Spinning';
 
 // Contants
 import { TYPE_CONSTANTS } from '../../../utils/constants';
@@ -39,10 +42,6 @@ export const LatestArticles = () => {
 
 	return (
 		<Box className='latest_article'>
-			<Box className='latest_article_title'>
-				<Title title='lg'>Últimos artículos</Title>
-			</Box>
-
 			{loading ? (
 				<Box className='latest_article_spinning'>
 					<Spinning />

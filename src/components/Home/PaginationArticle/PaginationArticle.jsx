@@ -15,13 +15,19 @@ const PaginationArticle = ({
 	return (
 		<Box className='pagination'>
 			{pagePagination > 1 && (
-				<Box className='latest_previous_article' onClick={paginationDecrement}>
+				<Box
+					className='latest_previous_article paragraph_blue'
+					onClick={paginationDecrement}
+				>
 					<LeftArrow fill='#09f' className='left_arrow' />
 					<Paragraph>artículos más recientes</Paragraph>
 				</Box>
 			)}
 			{allPosts.length >= 7 && (
-				<Box className='latest_previous_article' onClick={paginationIncrement}>
+				<Box
+					className='latest_previous_article paragraph_blue'
+					onClick={paginationIncrement}
+				>
 					<Paragraph>artículos anteriores</Paragraph>
 					<RightArrow fill='#09f' className='right_arrow' />
 				</Box>
