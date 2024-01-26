@@ -33,6 +33,7 @@
 // Tags
 
 .tags {
+	font-size: 14px;
 	font-weight: bold;
     padding: 1px 10px;
     width: max-content;
@@ -42,7 +43,8 @@
 
 
 .css {
-	background-color: #0e76bb;
+	border: 2px solid #0e76bb;
+	background-color: #0e76bb67
 }
 
 .course_css, .course_react {
@@ -50,7 +52,8 @@
 }
 
 .git {
-	background-color: #f65626;
+	border: 2px solid #f65626;
+	background-color: #f6562695;
 }
 
 .course_git {
@@ -58,7 +61,8 @@
 }
 
 .html {
-	background-color: #e03e0c;
+	border: 2px solid #e03e0c;
+	background-color: #e03e0c80;
 }
 
 .course_html {
@@ -66,7 +70,8 @@
 }
 
 .nest {
-	background-color: #ed2945;
+	border: 2px solid #ed2945;
+	background-color: #ed29466e;
 }
 
 .course_nest {
@@ -74,7 +79,8 @@
 }
 
 .javascript {
-	background-color: #ead12f
+	border: 2px solid #ead12f;
+	background-color: #ead12f9f
 }
 
 .course_javascript {
@@ -82,5 +88,6 @@
 }
 
 .react {
-	background-color: #35a6f1;
+	border: 2px solid #35a6f1;
+	background-color: #35a6f17f;
 }
