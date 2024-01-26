@@ -8,4 +8,4 @@ export { POSTS_ENDPOINT } from './endpoints.constants';
 
 // Others
 export { sizeElement } from './sizeElements.constants';
-export { TYPE_CONSTANTS } from './typePosts.constants';
+export { POSTS_TYPE } from './typePosts.constants';

@@ -1,4 +1,4 @@
-export const TYPE_CONSTANTS = {
+export const POSTS_TYPE = {
 	NORMAL: 'NORMAL',
 	COURSE: 'COURSE',
 };
