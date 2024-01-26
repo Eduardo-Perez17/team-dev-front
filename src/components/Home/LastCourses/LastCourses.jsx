@@ -15,7 +15,7 @@ import { ErrorFailedFetchCourse } from '../../errors';
 import { Spinning } from '../../Loaders/Spinning';
 
 // Utils
-import { TYPE_CONSTANTS } from '../../../utils/constants';
+import { POSTS_TYPE } from '../../../utils/constants';
 
 // Styles
 import './_lastCourses.scss';
@@ -27,7 +27,7 @@ const LastCourses = () => {
 		getAllPosts({
 			page: 1,
 			limit: 3,
-			search: TYPE_CONSTANTS.COURSE,
+			type: POSTS_TYPE.COURSE,
 		});
 	}, []);
 

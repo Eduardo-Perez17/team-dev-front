@@ -15,7 +15,7 @@ import { ErrorFailedFetch } from '../../errors';
 import { Spinning } from '../../Loaders/Spinning';
 
 // Contants
-import { TYPE_CONSTANTS } from '../../../utils/constants';
+import { POSTS_TYPE } from '../../../utils/constants';
 
 // Styles
 import './_latestArticle.scss';
@@ -36,7 +36,7 @@ export const LatestArticles = () => {
 		getAllPosts({
 			page: pagePagination,
 			limit: 7,
-			search: TYPE_CONSTANTS.NORMAL,
+			type: POSTS_TYPE.NORMAL,
 		});
 	}, [pagePagination]);
 
