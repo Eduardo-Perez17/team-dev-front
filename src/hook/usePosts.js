@@ -17,11 +17,30 @@ export const usePosts = () => {
 
 	const [loading, setLoading] = useState(false);
 	const [allPosts, setAllPosts] = useState([]);
+	const [postsSearch, setPostsSearch] = useState([]);
 	const [error, setError] = useState(false);
 
-	const getAllPosts = async ({ page = 1, limit = 7, type }) => {
+	const getAllPosts = async ({ page = 1, limit = 7, type, search }) => {
 		try {
 			setLoading(true);
+
+			if (search) {
+				const query = createQueryString({ search });
+				const response = await API_PUBLIC({
+					endpoint: `${POSTS_ENDPOINT}?${query}`,
+					jwt,
+				});
+
+				if (response?.statusCode && response?.statusCode !== 200) {
+					setError(true);
+					setLoading(false);
+					throw new Error(response.message);
+				}
+
+				setPostsSearch(response);
+				setError(false);
+			}
+
 			const query = createQueryString({ page, limit, type });
 			const response = await API_PUBLIC({
 				endpoint: `${POSTS_ENDPOINT}?${query}`,
@@ -54,5 +73,5 @@ export const usePosts = () => {
 		}
 	};
 
-	return { getAllPosts, allPosts, error, loading };
+	return { postsSearch, getAllPosts, allPosts, error, loading };
 };

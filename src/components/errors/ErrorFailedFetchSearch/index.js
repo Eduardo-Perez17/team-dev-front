@@ -1,0 +1,1 @@
+export { ErrorFailedFetchSearch } from './ErrorFailedFetchSearch';
