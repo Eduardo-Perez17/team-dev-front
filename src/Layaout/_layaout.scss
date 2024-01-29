@@ -43,8 +43,9 @@
 
 
 .css {
-	border: 2px solid #0e76bb;
-	background-color: #0e76bb67
+	border: 1px solid #0e76bb;
+	background-color: #0e76bb67;
+	color: #bfe5ff;
 }
 
 .course_css, .course_react {
@@ -54,6 +55,7 @@
 .git {
 	border: 2px solid #f65626;
 	background-color: #f6562695;
+	color: #ffbca7;
 }
 
 .course_git {
@@ -63,6 +65,7 @@
 .html {
 	border: 2px solid #e03e0c;
 	background-color: #e03e0c80;
+	color: #ffc5b6;
 }
 
 .course_html {
@@ -72,6 +75,7 @@
 .nest {
 	border: 2px solid #ed2945;
 	background-color: #ed29466e;
+	color: #ffb3bf;
 }
 
 .course_nest {
@@ -80,7 +84,8 @@
 
 .javascript {
 	border: 2px solid #ead12f;
-	background-color: #ead12f9f
+	background-color: #ead12f9f;
+	color: #fff5b4;
 }
 
 .course_javascript {
@@ -90,4 +95,5 @@
 .react {
 	border: 2px solid #35a6f1;
 	background-color: #35a6f17f;
+	color: #9fd9ff;
 }
