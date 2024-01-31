@@ -17,5 +17,6 @@ export const Input = ({
 		name: name,
 		id: id,
 		className: className,
+		autocomplete: "off"
 	});
 };

@@ -7,6 +7,7 @@ import miniDev from '../../assets/image/minidev-this-is-fine.png';
 import sleeping from '../../assets/image/sleeping.png';
 import crying from '../../assets/image/crying.png';
 import sweat from '../../assets/image/sweat.png';
+import penguin from '../../assets/image/penguin.png'
 
 export const LOGO_LIGHT = {
 	img: logoLight,
@@ -47,3 +48,8 @@ export const SLEEPING = {
 	img: sleeping,
 	alt: 'emoji enfermo',
 };
+
+export const PENGUIN = {
+	img: penguin,
+	alt: 'emoji pinguino'
+}
