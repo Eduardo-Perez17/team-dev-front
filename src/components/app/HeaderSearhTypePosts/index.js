@@ -1,0 +1,1 @@
+export {  HeaderSearhTypePosts } from './HeaderSearhTypePosts'

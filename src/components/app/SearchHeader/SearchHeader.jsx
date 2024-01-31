@@ -14,12 +14,12 @@ import { usePosts } from '../../../hook/usePosts';
 import { useDebounce } from '../../../hook/useDebounce';
 
 // Components
+import { HeaderSearchFound } from '../HeaderSearchFound';
 import { ErrorFailedFetchSearch } from '../../errors';
 import { Paragraph } from '../../Paragraph';
 import { Dots } from '../../Loaders';
 import { Input } from '../../Input';
 import { Box } from '../../Box';
-
 
 // Icons and images
 import { Search } from '../../icons/Search/Search';
@@ -42,10 +42,8 @@ export function SearchHeader({ handleClose, open }) {
 		[],
 	);
 
-	console.log(postsSearch);
-
 	// TODO: validar que si no encontro nada, que aparezca el mismo pinguino y el mensaje de not found
-
+	// TODO: Terminar la parte de information del modal de busqueda
 	return (
 		<div className='header_search_posts'>
 			<Modal
@@ -71,7 +69,9 @@ export function SearchHeader({ handleClose, open }) {
 							/>
 						</Box>
 
-						<Box className='search_content'>
+						<Box
+							className={`${inputValue === '' ? 'search_content' : 'search_content_value'}`}
+						>
 							{loading ? (
 								<Box className='loader_search'>
 									<Dots />
@@ -86,9 +86,14 @@ export function SearchHeader({ handleClose, open }) {
 													<img src={PENGUIN.img} alt={PENGUIN.alt} />
 												</Box>
 											) : (
-												<Box className='header_search'>
-													<></>
-												</Box>
+												<>
+													<Box className='header_search_found'>
+														<HeaderSearchFound
+															postsSearch={postsSearch}
+															inputValue={inputValue}
+														/>
+													</Box>
+												</>
 											)}
 										</>
 									) : (
@@ -140,10 +145,10 @@ const StyledBackdrop = styled(Backdrop)`
 
 const style = {
 	position: 'absolute',
-	top: '35%',
+	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	width: 530,
+	width: 630,
 };
 
 const ModalContent = styled('div')(
@@ -151,11 +156,12 @@ const ModalContent = styled('div')(
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		overflow: hidden;
+		overflow-y: scroll;
 		background-color: ${theme.palette.mode === 'dark' ? grey[900] : '#20252c'};
 		box-shadow: 0 4px 12px
 			${theme.palette.mode === 'dark' ? 'rgb(0 0 0 / 0.5)' : 'rgb(0 0 0 / 0.2)'};
 		border-radius: 5px;
 		width: 100%;
+		max-height: 500px;
 	`,
 );
