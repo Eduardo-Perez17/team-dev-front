@@ -1,1 +1,2 @@
-export { default as Spinning } from './Spinning';
+export { Spinning } from './Spinning';
+export {  Dots } from './Dots'

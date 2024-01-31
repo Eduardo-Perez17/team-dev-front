@@ -3,8 +3,6 @@ import { Box } from '../../Box';
 
 import './_dots.scss';
 
-const Dots = () => {
-	return <Box className='loader'></Box>;
+export const Dots = () => {
+	return <Box className='loader_dot'></Box>;
 };
-
-export default Dots;

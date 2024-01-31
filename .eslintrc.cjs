@@ -33,5 +33,6 @@ module.exports = {
 	rules: {
 		'react/prop-types': 'off',
 		'object-shorthand': 'off',
+		'react/display-name': 'off'
 	},
 };
