@@ -9,6 +9,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@media screen and (min-width: $width-mobile) and (max-width: $width-tablet-big) {
+			h2:nth-child(2) {
+				display: none;
+			}
+		}
+
 	}
 
 	.home_content {
