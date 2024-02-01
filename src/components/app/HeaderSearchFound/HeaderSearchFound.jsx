@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import { HeaderSearhTypePosts } from '../HeaderSearhTypePosts';
@@ -10,8 +11,9 @@ import { File, Book } from '../../icons';
 
 // Utils
 import { POSTS_TYPE } from '../../../utils/constants';
+import { POSTS } from '../../../utils/constants/path.constants';
 
-export const HeaderSearchFound = ({ postsSearch, inputValue }) => {
+export const HeaderSearchFound = ({ postsSearch }) => {
 	const [postNormal, setPostNormal] = useState([]);
 	const [postCourse, setPostCourse] = useState([]);
 
@@ -39,16 +41,23 @@ export const HeaderSearchFound = ({ postsSearch, inputValue }) => {
 				</Paragraph>
 				<Box className='header_search_found_container_items'>
 					{postNormal?.map(post => (
-						<Box key={post.id}>
-							<HeaderSearhTypePosts post={post}>
-								<File
-									className='post_search_item_icon'
-									width='25'
-									height='25'
-									fill='#fff'
-								/>
-							</HeaderSearhTypePosts>
-						</Box>
+						<React.Fragment key={post.id}>
+							<Link
+								to={`${POSTS}/${post.url}`}
+								className='latest_article_post_link'
+							>
+								<Box>
+									<HeaderSearhTypePosts post={post}>
+										<File
+											className='post_search_item_icon'
+											width='25'
+											height='25'
+											fill='#fff'
+										/>
+									</HeaderSearhTypePosts>
+								</Box>
+							</Link>
+						</React.Fragment>
 					))}
 				</Box>
 			</Box>
@@ -56,16 +65,23 @@ export const HeaderSearchFound = ({ postsSearch, inputValue }) => {
 				<Paragraph className='header_search_found_title'>Cursos</Paragraph>
 				<Box className='header_search_found_container_items'>
 					{postCourse?.map(post => (
-						<Box key={post.id}>
-							<HeaderSearhTypePosts post={post}>
-								<Book
-									className='post_search_item_icon'
-									width='25'
-									height='25'
-									fill='#fff'
-								/>
-							</HeaderSearhTypePosts>
-						</Box>
+						<React.Fragment key={post.id}>
+							<Link
+								to={`${POSTS}/${post.url}`}
+								className='latest_article_post_link'
+							>
+								<Box key={post.id}>
+									<HeaderSearhTypePosts post={post}>
+										<Book
+											className='post_search_item_icon'
+											width='25'
+											height='25'
+											fill='#fff'
+										/>
+									</HeaderSearhTypePosts>
+								</Box>
+							</Link>
+						</React.Fragment>
 					))}
 				</Box>
 			</Box>

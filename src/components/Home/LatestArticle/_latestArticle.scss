@@ -18,6 +18,12 @@
 	min-height: 80vh;
 }
 
+
+.latest_article_post_link:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
 .latest_article_post {
 	display: flex;
 	gap: 15px;

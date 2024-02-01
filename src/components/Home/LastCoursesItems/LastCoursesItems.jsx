@@ -1,24 +1,32 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+// Utils
+import { POSTS } from '../../../utils/constants/path.constants';
+
 // Components
 import { ArticlePostsImage } from '../ArticlePostsImage';
-import { Box } from '../../Box';
 import { Title } from '../../Title';
+import { Box } from '../../Box';
 
 const LastCoursesItems = ({ allPosts }) => {
-	console.log(allPosts);
-
 	return (
 		<>
 			{allPosts &&
 				allPosts?.map(post => (
-					<Box
-						className={`latest_article_courses course_${post.tags.tag}`}
-						key={post.id}
-					>
-						<ArticlePostsImage />
-						<Box className='article_post_content'>
-							<Title title='md'>{post.title}</Title>
-						</Box>
-					</Box>
+					<React.Fragment key={post.id}>
+						<Link to={`${POSTS}/${post.url}`} className='latest_article_post_link'>
+							<Box
+								className={`latest_article_courses course_${post.tags.tag}`}
+								key={post.id}
+							>
+								<ArticlePostsImage />
+								<Box className='article_post_content'>
+									<Title title='md'>{post.title}</Title>
+								</Box>
+							</Box>
+						</Link>
+					</React.Fragment>
 				))}
 		</>
 	);
