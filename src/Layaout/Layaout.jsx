@@ -5,8 +5,8 @@ import { Outlet } from 'react-router-dom';
 import './_layaout.scss';
 
 // Components
+import { Header, Footer, Slider } from '../components/app';
 import { Box } from '../components';
-import { Header, Footer } from '../components/app';
 
 // Hooks
 import { useAuth } from '../hook/useAuth';
@@ -20,13 +20,20 @@ const Layaout = () => {
 	}, []);
 
 	return (
-		<Box className='grid-father'>
-			<Box className='grid-son'>
-				<Header />
-				<Outlet />
-				<Footer />
+		<>
+			<Box className='grid-father'>
+				<Box className='grid-son'>
+					<Header />
+					<Outlet />
+				</Box>
 			</Box>
-		</Box>
+			<Box className='container_slider'>
+				<Slider className='slider_one' />
+				<Slider className='slider_two' />
+				<Slider className='slider_three' />
+			</Box>
+			<Footer />
+		</>
 	);
 };
 

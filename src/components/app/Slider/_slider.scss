@@ -1,0 +1,59 @@
+@import '../../../assets/vars.scss';
+
+.slider-container {
+	overflow: hidden;
+	width: 100%;
+}
+
+.container_slider {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.slider {
+	display: flex;
+	gap: 20px;
+	scroll-behavior: smooth;
+    max-width: 100px; 
+    margin-left: -80px;
+
+    .tag_main {
+        min-width: max-content;
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: .2s color ease;
+
+        &:hover {
+            color:  $color-blue;
+        }
+    }
+
+    .tag_main {
+        padding: 5px;
+        border-radius: 20px;
+        padding: 8px 30px;
+        background-color: $shadow-dark;
+    }
+}
+
+.slider_one {
+	animation: slide 5s linear infinite;
+}
+
+.slider_two {
+	animation: slide 16s linear infinite; 
+}
+
+.slider_three {
+	animation: slide 9s linear infinite; 
+}
+
+@keyframes slide {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
