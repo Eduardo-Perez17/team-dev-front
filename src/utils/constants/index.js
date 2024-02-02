@@ -5,6 +5,7 @@ export { NOT_FOUND } from './path.constants';
 // Endpoints
 export { LOGIN_ENDPOINT } from './endpoints.constants';
 export { POSTS_ENDPOINT } from './endpoints.constants';
+export { TAGS_ENDPOINT } from './endpoints.constants';
 
 // Others
 export { sizeElement } from './sizeElements.constants';

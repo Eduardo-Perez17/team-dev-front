@@ -8,15 +8,15 @@
 		grid-template-columns: 60px 1fr 60px;
 	}
 
-    @media screen and (min-width: $width-tablet-mini) and (max-width: $width-tablet-big) {
+	@media screen and (min-width: $width-tablet-mini) and (max-width: $width-tablet-big) {
 		grid-template-columns: 80px 1fr 80px;
 	}
 
-    @media screen and (min-width: $width-tablet-big) and (max-width: $width-monitor-mini) {
+	@media screen and (min-width: $width-tablet-big) and (max-width: $width-monitor-mini) {
 		grid-template-columns: 120px 1fr 120px;
 	}
 
-    @media screen and (min-width: $width-monitor-mini)  {
+	@media screen and (min-width: $width-monitor-mini) {
 		grid-template-columns: 200px 1fr 200px;
 	}
 }
@@ -35,12 +35,11 @@
 .tags {
 	font-size: 14px;
 	font-weight: bold;
-    padding: 1px 10px;
-    width: max-content;
-    border-radius: 30px;
-    text-transform: capitalize;
+	padding: 1px 10px;
+	width: max-content;
+	border-radius: 30px;
+	text-transform: capitalize;
 }
-
 
 .css {
 	// border: 1px solid #0e76bb;
@@ -48,8 +47,16 @@
 	color: #d9f0ff;
 }
 
-.course_css, .course_react {
-	background-image: linear-gradient(to right bottom,#70a9f2,#5c91da,#477bc2,#3264ab,#1a4f94);
+.course_css,
+.course_react {
+	background-image: linear-gradient(
+		to right bottom,
+		#70a9f2,
+		#5c91da,
+		#477bc2,
+		#3264ab,
+		#1a4f94
+	);
 }
 
 .git {
@@ -59,7 +66,14 @@
 }
 
 .course_git {
-	background-image: linear-gradient(to right bottom,#f4827c,#e16e67,#ce5a52,#bb463e,#a8312b);
+	background-image: linear-gradient(
+		to right bottom,
+		#f4827c,
+		#e16e67,
+		#ce5a52,
+		#bb463e,
+		#a8312b
+	);
 }
 
 .html {
@@ -69,7 +83,14 @@
 }
 
 .course_html {
-	background-image: linear-gradient(to right bottom,#fba97e,#fa9c6a,#f88e57,#f58043,#f2722e);
+	background-image: linear-gradient(
+		to right bottom,
+		#fba97e,
+		#fa9c6a,
+		#f88e57,
+		#f58043,
+		#f2722e
+	);
 }
 
 .nest {
@@ -79,7 +100,14 @@
 }
 
 .course_nest {
-	background-image: linear-gradient(to right bottom,#fd5f88,#ea4e73,#d63c60,#c3294c,#af113a);
+	background-image: linear-gradient(
+		to right bottom,
+		#fd5f88,
+		#ea4e73,
+		#d63c60,
+		#c3294c,
+		#af113a
+	);
 }
 
 .javascript {
@@ -89,7 +117,14 @@
 }
 
 .course_javascript {
-	background-image: linear-gradient(to right bottom,#ffed76,#e3d05c,#c7b443,#ab9929,#907f08);
+	background-image: linear-gradient(
+		to right bottom,
+		#ffed76,
+		#e3d05c,
+		#c7b443,
+		#ab9929,
+		#907f08
+	);
 }
 
 .react {
