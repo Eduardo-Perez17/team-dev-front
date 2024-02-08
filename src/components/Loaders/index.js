@@ -1,2 +1,2 @@
 export { Spinning } from './Spinning';
-export {  Dots } from './Dots'
+export { Dots } from './Dots'

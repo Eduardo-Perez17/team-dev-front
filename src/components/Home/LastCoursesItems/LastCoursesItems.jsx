@@ -20,7 +20,7 @@ const LastCoursesItems = ({ allPosts }) => {
 								className={`latest_article_courses course_${post.tags.tag}`}
 								key={post.id}
 							>
-								<ArticlePostsImage />
+								<ArticlePostsImage post={post} />
 								<Box className='article_post_content'>
 									<Title title='md'>{post.title}</Title>
 								</Box>
