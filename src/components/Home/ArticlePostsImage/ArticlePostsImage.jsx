@@ -4,12 +4,13 @@ import { MINI_DEV } from '../../../utils/images';
 import { Box } from '../../Box';
 
 const ArticlePostsImage = ({ post }) => {
+
 	return (
 		<Box className='latest_article_post_image'>
-			{post?.image?.url ? (
+			{post?.tags?.tagImage ? (
 				<img
-					src={post?.image?.url}
-					alt={post?.image?.url}
+					src={post?.tags?.tagImage}
+					alt={post?.tags?.tagImage}
 					className='latest_article_post_image_item'
 				/>
 			) : (

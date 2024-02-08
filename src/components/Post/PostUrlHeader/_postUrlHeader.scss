@@ -1,0 +1,31 @@
+.post_header {
+	display: flex;
+	gap: 20px;
+	align-content: center;
+
+	.latest_article_post_image {
+		img {
+			width: 100px;
+		}
+	}
+
+	.post_header_content {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		justify-content: center;
+
+        .post_header_content_info_name, .post_header_content_title {
+            text-transform: capitalize;
+        }
+
+        .post_header_content_title {
+            font-size: 35px;
+        }
+
+        .post_header_content_info {
+            display: flex;
+            gap: 20px;
+        }
+	}
+}
