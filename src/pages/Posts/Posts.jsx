@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { usePosts } from '../../hook/usePosts';
 
 // Components
-import { PostUrlHeader, PostUrlContent } from '../../components/Post';
+import { PostUrlHeader, PostUrlContent, PostNavigation } from '../../components/Post';
 import { Box } from '../../components/Box';
 
 // Errors and loaders
@@ -36,6 +36,9 @@ const Posts = () => {
 							<>
 								<PostUrlHeader postByUrl={postByUrl} />
 								<PostUrlContent postByUrl={postByUrl} />
+								<Box className='navigation'>
+									<PostNavigation />
+								</Box>
 							</>
 						) : (
 							<ErrorFailedFetchPostUrl />
