@@ -1,18 +1,35 @@
 import { Link } from 'react-router-dom';
 
 // PATH
-import { HOME } from '../../../utils/constants/path.constants'
+import { HOME } from '../../../utils/constants/path.constants';
 
 // Icons
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import ThumbDownAltOutlinedIcon from '@mui/icons-material/ThumbDownAltOutlined';
+import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 // Components
 import { Box } from '../../Box';
 
-export const PostNavigation = () => {
+// Custom hooks
+import { usePostNavigationHook } from '../../../customHooks';
+
+export const PostNavigation = ({
+	postId,
+	likesPost,
+	disLikesPost,
+	savedPostById,
+}) => {
+	const { buttonLikes, buttonDisLikes } = usePostNavigationHook({
+		id: postId,
+		likesPost,
+		disLikesPost,
+	});
+
 	return (
 		<>
 			<Link to={HOME}>
@@ -21,14 +38,17 @@ export const PostNavigation = () => {
 				</Box>
 			</Link>
 
-			<Box className='navigation_icon'>
-				<FavoriteBorderIcon />
+			<Box
+				className='navigation_icon'
+				onClick={() => savedPostById({ id: postId })}
+			>
+				<BookmarkOutlinedIcon />
 			</Box>
-			<Box className='navigation_icon'>
-				<ThumbUpOutlinedIcon />
+			<Box className='navigation_icon' onClick={buttonLikes}>
+				{likesPost ? <ThumbUpIcon /> : <ThumbUpOutlinedIcon />}
 			</Box>
-			<Box className='navigation_icon'>
-				<ThumbDownAltOutlinedIcon />
+			<Box className='navigation_icon' onClick={buttonDisLikes}>
+				{disLikesPost ? <ThumbDownAltIcon /> : <ThumbDownAltOutlinedIcon />}
 			</Box>
 		</>
 	);
