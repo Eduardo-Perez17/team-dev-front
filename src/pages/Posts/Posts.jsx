@@ -5,7 +5,11 @@ import { useParams } from 'react-router-dom';
 import { usePosts } from '../../hook/usePosts';
 
 // Components
-import { PostUrlHeader, PostUrlContent } from '../../components/Post';
+import {
+	PostUrlHeader,
+	PostUrlContent,
+	PostNavigation,
+} from '../../components/Post';
 import { Box } from '../../components/Box';
 
 // Errors and loaders
@@ -17,7 +21,7 @@ import './_posts.scss';
 
 const Posts = () => {
 	const { slug } = useParams();
-	const { getPostByUrl, postByUrl, error, loading } = usePosts();
+	const { getPostByUrl, postByUrl, savedPostById, error, loading } = usePosts();
 
 	useEffect(() => {
 		getPostByUrl({ url: slug });
@@ -36,6 +40,14 @@ const Posts = () => {
 							<>
 								<PostUrlHeader postByUrl={postByUrl} />
 								<PostUrlContent postByUrl={postByUrl} />
+								<Box className='navigation'>
+									<PostNavigation
+										postId={postByUrl?.data?.id}
+										likesPost={postByUrl?.data?.likes}
+										disLikesPost={postByUrl?.data?.dislikes}
+										savedPostById={savedPostById}
+									/>
+								</Box>
 							</>
 						) : (
 							<ErrorFailedFetchPostUrl />
