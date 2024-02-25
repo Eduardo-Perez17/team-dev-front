@@ -12,6 +12,8 @@ import {
 } from '../../components/Post';
 import { Box } from '../../components/Box';
 
+import toast, { Toaster } from 'react-hot-toast';
+
 // Errors and loaders
 import { ErrorFailedFetchPostUrl } from '../../components/errors';
 import { Spinning } from '../../components/Loaders';
@@ -25,37 +27,44 @@ const Posts = () => {
 
 	useEffect(() => {
 		getPostByUrl({ url: slug });
-	}, []);
+	}, [slug]);
+
+	const notify = () => toast.success('Acción satisfactoria');
 
 	return (
-		<Box className='post_url'>
-			<>
-				{loading ? (
-					<Box className='post_url_loader'>
-						<Spinning />
-					</Box>
-				) : (
-					<>
-						{!error ? (
-							<>
-								<PostUrlHeader postByUrl={postByUrl} />
-								<PostUrlContent postByUrl={postByUrl} />
-								<Box className='navigation'>
-									<PostNavigation
-										postId={postByUrl?.data?.id}
-										likesPost={postByUrl?.data?.likes}
-										disLikesPost={postByUrl?.data?.dislikes}
-										savedPostById={savedPostById}
-									/>
-								</Box>
-							</>
-						) : (
-							<ErrorFailedFetchPostUrl />
-						)}
-					</>
-				)}
-			</>
-		</Box>
+		<>
+			<Box className='post_url'>
+				<>
+					{loading ? (
+						<Box className='post_url_loader'>
+							<Spinning />
+						</Box>
+					) : (
+						<>
+							{!error ? (
+								<>
+									<PostUrlHeader postByUrl={postByUrl} />
+									<PostUrlContent postByUrl={postByUrl} />
+									<Box className='navigation'>
+										<PostNavigation
+											postId={postByUrl?.data?.id}
+											likesPost={postByUrl?.data?.likes}
+											disLikesPost={postByUrl?.data?.dislikes}
+											savedPostById={savedPostById}
+											notify={notify}
+										/>
+									</Box>
+								</>
+							) : (
+								<ErrorFailedFetchPostUrl />
+							)}
+						</>
+					)}
+				</>
+			</Box>
+
+			<Toaster position='top-left' />
+		</>
 	);
 };
 

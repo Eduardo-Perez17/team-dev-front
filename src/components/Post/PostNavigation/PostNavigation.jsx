@@ -23,6 +23,7 @@ export const PostNavigation = ({
 	likesPost,
 	disLikesPost,
 	savedPostById,
+	notify,
 }) => {
 	const { buttonLikes, buttonDisLikes } = usePostNavigationHook({
 		id: postId,
@@ -40,14 +41,33 @@ export const PostNavigation = ({
 
 			<Box
 				className='navigation_icon'
-				onClick={() => savedPostById({ id: postId })}
+				onClick={() => {
+					savedPostById({ id: postId });
+					notify();
+				}}
 			>
-				<BookmarkOutlinedIcon />
+				{savedPostById ? (
+					<BookmarkBorderOutlinedIcon />
+				) : (
+					<BookmarkOutlinedIcon />
+				)}
 			</Box>
-			<Box className='navigation_icon' onClick={buttonLikes}>
+			<Box
+				className='navigation_icon'
+				onClick={() => {
+					buttonLikes();
+					notify();
+				}}
+			>
 				{likesPost ? <ThumbUpIcon /> : <ThumbUpOutlinedIcon />}
 			</Box>
-			<Box className='navigation_icon' onClick={buttonDisLikes}>
+			<Box
+				className='navigation_icon'
+				onClick={() => {
+					buttonDisLikes();
+					notify();
+				}}
+			>
 				{disLikesPost ? <ThumbDownAltIcon /> : <ThumbDownAltOutlinedIcon />}
 			</Box>
 		</>

@@ -86,7 +86,6 @@ export const usePosts = () => {
 			}
 
 			setPostByUrl(response)
-			setLoading(true);
 			return true
 		} catch (error) {
 			setError(true);

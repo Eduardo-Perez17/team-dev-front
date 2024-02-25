@@ -31,7 +31,6 @@
 }
 
 // Tags
-
 .tags {
 	font-size: 14px;
 	font-weight: bold;
@@ -41,94 +40,37 @@
 	text-transform: capitalize;
 }
 
-.css {
-	// border: 1px solid #0e76bb;
-	background-color: #0e76bb67;
-	color: #d9f0ff;
-}
-
-.course_css,
-.course_react {
-	background-image: linear-gradient(
-		to right bottom,
-		#70a9f2,
-		#5c91da,
-		#477bc2,
-		#3264ab,
-		#1a4f94
-	);
-}
-
-.git {
-	// border: 2px solid #f65626;
-	background-color: #f6562695;
-	color: #ffdbd1;
-}
-
-.course_git {
-	background-image: linear-gradient(
-		to right bottom,
-		#f4827c,
-		#e16e67,
-		#ce5a52,
-		#bb463e,
-		#a8312b
-	);
-}
-
-.html {
-	// border: 2px solid #e03e0c;
-	background-color: #e03e0c80;
-	color: #ffc5b6;
-}
-
-.course_html {
-	background-image: linear-gradient(
-		to right bottom,
-		#fba97e,
-		#fa9c6a,
-		#f88e57,
-		#f58043,
-		#f2722e
-	);
+.html, .git {
+	background-color: #e03e0c47;
+	color: #ff6b3e;
 }
 
 .nest {
-	// border: 2px solid #ed2945;
-	background-color: #ed29466e;
-	color: #ffd9df;
+	background-color: #ed294647;
+	color: #ff3d5a;
 }
 
-.course_nest {
-	background-image: linear-gradient(
-		to right bottom,
-		#fd5f88,
-		#ea4e73,
-		#d63c60,
-		#c3294c,
-		#af113a
-	);
+.aws, .javascript {
+	background-color: #ffff0056;
+	color: #ffff00;
 }
 
-.javascript {
-	// border: 2px solid #ead12f;
-	background-color: #ead12f9f;
-	color: #fffcea;
+.next, .terminal {
+	background-color: #0000005e;
+	color: #ffffff;
 }
 
-.course_javascript {
-	background-image: linear-gradient(
-		to right bottom,
-		#ffed76,
-		#e3d05c,
-		#c7b443,
-		#ab9929,
-		#907f08
-	);
+.cypress {
+	background-color: #00778049;
+	color: #00eeff;
 }
 
-.react {
-	// border: 2px solid #35a6f1;
-	background-color: #35a6f17f;
-	color: #e2f3ff;
+.sass {
+	background-color: #bf407f69;
+	color: #ff399c;
+}
+
+.typescript, .react, .css {
+	background-color: #3179c651;
+	color: #1f8bff;
 }
