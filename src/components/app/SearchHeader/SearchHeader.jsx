@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
 // Mui
+import CloseIcon from '@mui/icons-material/Close';
 import { styled, css } from '@mui/system';
 import { Modal } from '@mui/base/Modal';
 import Fade from '@mui/material/Fade';
@@ -29,6 +30,8 @@ export function SearchHeader({ handleClose, open }) {
 	const { getAllPosts, loading, error, postsSearch } = usePosts();
 
 	const [inputValue, setInputValue] = useState('');
+
+	const clearInput = () => setInputValue('')
 
 	const handleChangeSearch = ({ search }) => {
 		setInputValue(search);
@@ -67,6 +70,9 @@ export function SearchHeader({ handleClose, open }) {
 								onChange={e => handleChangeSearch({ search: e.target.value })}
 								value={inputValue}
 							/>
+							<Box onClick={clearInput} className='main_modal_input_clear_input'>
+								<CloseIcon />
+							</Box>
 						</Box>
 
 						<Box
@@ -91,6 +97,7 @@ export function SearchHeader({ handleClose, open }) {
 														<HeaderSearchFound
 															postsSearch={postsSearch}
 															inputValue={inputValue}
+															onClose={handleClose}
 														/>
 													</Box>
 												</>
