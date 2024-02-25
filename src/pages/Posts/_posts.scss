@@ -12,6 +12,17 @@
         display: flex;
         gap: 25px;
         flex-direction: column;
+
+        .post_content_item_text {
+            display: flex;
+            gap: 25px;
+            flex-direction: column;
+
+            p {
+                line-height: 35px;
+            }
+        }
+
     }
 
 
@@ -31,9 +42,21 @@
         gap: 10px;
         flex-direction: column;
         font-size: 14px;
+
+        .code_item {
+            display: flex;
+            gap: 8px;
+        }
     }
 }
 
+.strong_text {
+    background-color: $color-light;
+    color: $color-black;
+    padding: 0 2px;
+    margin: 0 4px;
+    border-radius: 4px;
+}
 
 .comment {
     color: #969696;
@@ -63,12 +86,14 @@
     justify-content: center;
     border-radius: 20px;
     background-color: $color-blue;
-    padding: 4px 20px;
     box-shadow: 0 20px 60px #00000068;
     position: fixed;
     bottom: 50px;
-    left: 43%;
+    left: 50%;
+    transform: translateX(-50%); 
     z-index: 10;
+    width: 250px;
+    height: 50px;
 
     a:hover {
         color: $color-light;
@@ -81,10 +106,15 @@
         cursor: pointer;
         padding: 8px;
         border-radius: 50%;
-        transition: background .2s ease;
+
+        svg {
+            transition: all .2s ease;
+        }
         
         &:hover {
-            background-color: #0e66a155;
+            svg {
+                transform: scale(1.2);
+            }
         }
     }
 }

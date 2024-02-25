@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 // Hooks
@@ -24,8 +24,8 @@ const Posts = () => {
 	const { getPostByUrl, postByUrl, savedPostById, error, loading } = usePosts();
 
 	useEffect(() => {
-		getPostByUrl({ url: slug });
-	}, []);
+		getPostByUrl({ url: slug })
+	}, [slug]);
 
 	return (
 		<Box className='post_url'>
