@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Utils
@@ -14,19 +13,22 @@ const LastCoursesItems = ({ allPosts }) => {
 		<>
 			{allPosts &&
 				allPosts?.map(post => (
-					<React.Fragment key={post.id}>
-						<Link to={`${POSTS}/${post.url}`} className='latest_article_post_link'>
+					<Link
+						to={`${POSTS}/${post.url}`}
+						className='latest_article_post_link'
+						key={post.id}
+					>
+						<Box className='latest_article_courses' key={post.id}>
 							<Box
-								className={`latest_article_courses course_${post.tags.tag}`}
-								key={post.id}
+								className={`article_post_content_img course_${post.tags.tag}`}
 							>
 								<ArticlePostsImage post={post} />
-								<Box className='article_post_content'>
-									<Title title='md'>{post.title}</Title>
-								</Box>
 							</Box>
-						</Link>
-					</React.Fragment>
+							<Box className='article_post_content'>
+								<Title title='md'>{post.title}</Title>
+							</Box>
+						</Box>
+					</Link>
 				))}
 		</>
 	);

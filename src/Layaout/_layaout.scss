@@ -65,12 +65,20 @@
 	color: #00eeff;
 }
 
-.sass {
+.sass, .graphQL {
 	background-color: #bf407f69;
 	color: #ff399c;
+}
+
+.course_sass, .course_graphQL {
+	background-color: #fb5bab;
 }
 
 .typescript, .react, .css {
 	background-color: #3179c651;
 	color: #1f8bff;
+}
+
+.course_typescript, .course_react, .course_css, .course_sql {
+	background-color: #3798ff;
 }
