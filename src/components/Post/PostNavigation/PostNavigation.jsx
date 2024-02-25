@@ -17,23 +17,19 @@ import { Box } from '../../Box';
 
 // Custom hooks
 import { usePostNavigationHook } from '../../../customHooks';
-import { useEffect } from 'react';
 
 export const PostNavigation = ({
 	postId,
 	likesPost,
 	disLikesPost,
 	savedPostById,
+	notify,
 }) => {
 	const { buttonLikes, buttonDisLikes } = usePostNavigationHook({
 		id: postId,
 		likesPost,
 		disLikesPost,
 	});
-
-	useEffect(()=> {
-
-	}, [])
 
 	return (
 		<>
@@ -45,15 +41,33 @@ export const PostNavigation = ({
 
 			<Box
 				className='navigation_icon'
-				onClick={() => savedPostById({ id: postId })}
+				onClick={() => {
+					savedPostById({ id: postId });
+					notify();
+				}}
 			>
-				{savedPostById ? <BookmarkBorderOutlinedIcon /> : <BookmarkOutlinedIcon /> }
-				
+				{savedPostById ? (
+					<BookmarkBorderOutlinedIcon />
+				) : (
+					<BookmarkOutlinedIcon />
+				)}
 			</Box>
-			<Box className='navigation_icon' onClick={buttonLikes}>
+			<Box
+				className='navigation_icon'
+				onClick={() => {
+					buttonLikes();
+					notify();
+				}}
+			>
 				{likesPost ? <ThumbUpIcon /> : <ThumbUpOutlinedIcon />}
 			</Box>
-			<Box className='navigation_icon' onClick={buttonDisLikes}>
+			<Box
+				className='navigation_icon'
+				onClick={() => {
+					buttonDisLikes();
+					notify();
+				}}
+			>
 				{disLikesPost ? <ThumbDownAltIcon /> : <ThumbDownAltOutlinedIcon />}
 			</Box>
 		</>
