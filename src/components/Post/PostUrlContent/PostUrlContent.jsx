@@ -1,8 +1,13 @@
+// MUI
+// import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
 export const PostUrlContent = ({ postByUrl }) => {
 	// <div
 	// 	dangerouslySetInnerHTML={{ __html: postByUrl?.data?.content }}
 	// 	className='post_content_item'
 	// />
+
+	console.log({ post: postByUrl?.data?.tags?.tagImage });
 
 	return (
 		<div className='post_content_item'>
@@ -31,37 +36,52 @@ export const PostUrlContent = ({ postByUrl }) => {
 				</p>
 			</div>
 
-			<pre>
-				<code>
-					<span className='comment'>{'// Este es un comentario'}</span>
-					<div className='code_item'>
-						<span className='kr'>const</span>
-						<span className='name'>name</span>
-						<span className='p'>=</span>
-						<span className='p'>[</span>
-						<span className='mi'>1</span>
-						<span className='p'>,</span>
-						<span className='mi'>2</span>
-						<span className='p'>,</span>
-						<span className='mi'>3</span>
-						<span className='p'>]</span>
+			<div className='code_container'>
+				{/* <div className='code_container_item'>
+					<div>
+						<ContentCopyIcon />
 					</div>
+					<div className='code_container_tag'>
+						{postByUrl?.data?.tags?.tagImage && (
+							<div className='code_container_tag'>
+								<img src={postByUrl?.data?.tags?.tagImage} alt='icono de etiqueta de post' />
+							</div>
+						)}
+					</div>
+				</div> */}
 
-					<span className='comment'>{'// Este es un comentario'}</span>
-					<div className='code_item'>
-						<span className='kr'>const</span>
-						<span className='name'>apples</span>
-						<span className='p'>=</span>
-						<span className='p'>[</span>
-						<span className='mi'>1</span>
-						<span className='p'>,</span>
-						<span className='mi'>2</span>
-						<span className='p'>,</span>
-						<span className='mi'>3</span>
-						<span className='p'>]</span>
-					</div>
-				</code>
-			</pre>
+				<pre>
+					<code>
+						<span className='comment'>{'// Este es un comentario'}</span>
+						<div className='code_item'>
+							<span className='kr'>const</span>
+							<span className='name'>name</span>
+							<span className='p'>=</span>
+							<span className='p'>[</span>
+							<span className='mi'>1</span>
+							<span className='p'>,</span>
+							<span className='mi'>2</span>
+							<span className='p'>,</span>
+							<span className='mi'>3</span>
+							<span className='p'>]</span>
+						</div>
+
+						<span className='comment'>{'// Este es un comentario'}</span>
+						<div className='code_item'>
+							<span className='kr'>const</span>
+							<span className='name'>apples</span>
+							<span className='p'>=</span>
+							<span className='p'>[</span>
+							<span className='mi'>1</span>
+							<span className='p'>,</span>
+							<span className='mi'>2</span>
+							<span className='p'>,</span>
+							<span className='mi'>3</span>
+							<span className='p'>]</span>
+						</div>
+					</code>
+				</pre>
+			</div>
 
 			<div className='post_content_item_text'>
 				<p>
