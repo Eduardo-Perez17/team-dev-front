@@ -13,7 +13,7 @@ import { File, Book } from '../../icons';
 import { POSTS_TYPE } from '../../../utils/constants';
 import { POSTS } from '../../../utils/constants/path.constants';
 
-export const HeaderSearchFound = ({ postsSearch }) => {
+export const HeaderSearchFound = ({ postsSearch, onClose }) => {
 	const [postNormal, setPostNormal] = useState([]);
 	const [postCourse, setPostCourse] = useState([]);
 
@@ -45,6 +45,7 @@ export const HeaderSearchFound = ({ postsSearch }) => {
 							<Link
 								to={`${POSTS}/${post.url}`}
 								className='latest_article_post_link'
+								onClick={onClose}
 							>
 								<Box>
 									<HeaderSearhTypePosts post={post}>
@@ -69,6 +70,7 @@ export const HeaderSearchFound = ({ postsSearch }) => {
 							<Link
 								to={`${POSTS}/${post.url}`}
 								className='latest_article_post_link'
+								onClick={onClose}
 							>
 								<Box key={post.id}>
 									<HeaderSearhTypePosts post={post}>

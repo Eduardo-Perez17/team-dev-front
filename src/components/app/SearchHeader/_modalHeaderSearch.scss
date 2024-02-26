@@ -20,6 +20,21 @@
 	justify-content: center;
 	height: 60px;
 	padding: 0px 8px;
+	text-decoration: none;
+
+
+	.main_modal_input_clear_input {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		svg {
+			width: 35px;
+			height: 35px;
+
+			fill:  $color-blue;
+		}
+	}
 }
 
 .modal_input {
@@ -28,6 +43,7 @@
 	outline: none;
 	width: 100%;
 	font-size: 20px;
+	letter-spacing: 2px;
 }
 
 input:-internal-autofill-selected {
