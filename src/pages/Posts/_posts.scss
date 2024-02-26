@@ -1,120 +1,146 @@
-
 @import '../../assets/vars.scss';
 
 .post_url {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 60px ;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 40px;
+	margin-bottom: 60px;
 
-    .post_content_item {
-        display: flex;
-        gap: 25px;
-        flex-direction: column;
+	.post_content_item {
+		display: flex;
+		gap: 25px;
+		flex-direction: column;
 
-        .post_content_item_text {
-            display: flex;
-            gap: 25px;
-            flex-direction: column;
+		.post_content_item_text {
+			display: flex;
+			gap: 25px;
+			flex-direction: column;
 
-            p {
-                line-height: 35px;
-            }
-        }
+			p {
+				line-height: 35px;
+			}
+		}
 
-    }
+		.code_container {
+			position: relative;
 
+			.code_container_item > div {
+				width: 40px;
+				height: 40px;
+				background-color: $background-dark-more;
+                border-radius: 10px;
+				position: absolute;
+				top: 10px;
+				right: 20px;
+			}
 
-    pre {
-        margin: 30px 0;
-        background: #282c34;
-        border-radius: 4px;
-        color: $color-light;
-        overflow: auto;
-        padding: 16px;
-        box-shadow: 0 20px 60px rgba(0,0,0,.3);
-        border: 4px;
-    }
+			.code_container_item div:nth-child(1) {
+				margin-right: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+                
+				svg {
+                    padding: 14px;
+					width: 50px;
+					height: 50px;
+                    cursor: pointer;
+				}
+			}
+		}
+	}
 
-    code {
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-        font-size: 14px;
+	pre {
+		margin: 30px 0;
+		background: #282c34;
+		border-radius: 4px;
+		color: $color-light;
+		overflow: auto;
+		padding: 16px;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+		border: 4px;
+	}
 
-        .code_item {
-            display: flex;
-            gap: 8px;
-        }
-    }
+	code {
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+		font-size: 14px;
+
+		.code_item {
+			display: flex;
+			gap: 8px;
+		}
+	}
 }
 
 .strong_text {
-    background-color: $color-light;
-    color: $color-black;
-    padding: 0 2px;
-    margin: 0 4px;
-    border-radius: 4px;
+	background-color: $color-light;
+	color: $color-black;
+	padding: 0 2px;
+	margin: 0 4px;
+	border-radius: 4px;
 }
 
 .comment {
-    color: #969696;
-    font-style: italic;
+	color: #969696;
+	font-style: italic;
 }
 
 .kr {
-    color: #dc64ff;
+	color: #dc64ff;
 }
 
 .name {
-    color: #fb6666;
+	color: #fb6666;
 }
 
-.o, .p {
-    color: #abb2bf;
+.o,
+.p {
+	color: #abb2bf;
 }
 
 .mi {
-    color: #e8e465;
+	color: #e8e465;
 }
 
 .navigation {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    background-color: $color-blue;
-    box-shadow: 0 20px 60px #00000068;
-    position: fixed;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%); 
-    z-index: 10;
-    width: 250px;
-    height: 50px;
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	background-color: $color-blue;
+	box-shadow: 0 20px 60px #00000068;
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	width: 250px;
+	height: 50px;
 
-    a:hover {
-        color: $color-light;
-    }
-    
-    .navigation_icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 8px;
-        border-radius: 50%;
+	a:hover {
+		color: $color-light;
+	}
 
-        svg {
-            transition: all .2s ease;
-        }
-        
-        &:hover {
-            svg {
-                transform: scale(1.2);
-            }
-        }
-    }
+	.navigation_icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		padding: 8px;
+		border-radius: 50%;
+
+		svg {
+			transition: all 0.2s ease;
+		}
+
+		&:hover {
+			svg {
+				transform: scale(1.2);
+			}
+		}
+	}
 }
