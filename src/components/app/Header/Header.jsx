@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// MUI
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 // Path
 import { HOME } from '../../../utils/constants';
@@ -9,7 +11,7 @@ import { HOME } from '../../../utils/constants';
 import './header.scss';
 
 // images
-import { LOGO_DARK, SUN } from '../../../utils/images';
+import { LOGO_DARK } from '../../../utils/images';
 
 // components
 import { SearchHeader } from '../SearchHeader';
@@ -53,8 +55,11 @@ export const Header = () => {
 							/>
 						</Box>
 
-						<Box className='header_theme_network'>
-							<img src={SUN.img} alt={SUN.alt} width={35} height={35} />
+						<Box className='header_network'>
+							{/* <img src={SUN.img} alt={SUN.alt} width={35} height={35} /> */}
+							<a href='https://github.com/Eduardo-Perez17'  target='_blank' rel='noreferrer'>
+								<GitHubIcon />
+							</a>
 						</Box>
 					</Box>
 				</Box>
