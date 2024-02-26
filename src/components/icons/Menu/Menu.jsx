@@ -1,4 +1,4 @@
-export const Menu = ({ fill, height = '40', width = '40', className }) => {
+export const Menu = ({ fill, height = '40', width = '40', className, onClick }) => {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -6,6 +6,7 @@ export const Menu = ({ fill, height = '40', width = '40', className }) => {
 			viewBox='0 -960 960 960'
 			width={width}
 			className={className}
+			onClick={onClick}
 		>
 			<path
 				fill={fill}
