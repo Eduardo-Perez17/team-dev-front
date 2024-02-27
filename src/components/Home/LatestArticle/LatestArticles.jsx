@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Hooks
 import { usePosts } from '../../../hook/usePosts';
 
 // Components
 import { LatestArticlePost } from '../LatestArticlePost';
-import { PaginationArticle } from '../PaginationArticle';
+import { Button } from '../../Button';
 import { Box } from '../../Box';
 
 // Errors
@@ -19,26 +20,26 @@ import { POSTS_TYPE } from '../../../utils/constants';
 
 // Styles
 import './_latestArticle.scss';
+import { Title } from '../../Title';
 
 export const LatestArticles = () => {
 	const { getAllPosts, allPosts, loading, error } = usePosts();
-	const [pagePagination, setPagePagination] = useState(1);
+	// const [pagePagination, setPagePagination] = useState(1);
 
-	const paginationIncrement = () => {
-		setPagePagination(pagePagination + 1);
-	};
+	// const paginationIncrement = () => {
+	// 	setPagePagination(pagePagination + 1);
+	// };
 
-	const paginationDecrement = () => {
-		setPagePagination(pagePagination - 1);
-	};
+	// const paginationDecrement = () => {
+	// 	setPagePagination(pagePagination - 1);
+	// };
 
 	useEffect(() => {
 		getAllPosts({
-			page: pagePagination,
-			limit: 7,
+			limit: 8,
 			type: POSTS_TYPE.NORMAL,
 		});
-	}, [pagePagination]);
+	}, []);
 
 	return (
 		<Box className='latest_article'>
@@ -50,13 +51,19 @@ export const LatestArticles = () => {
 				<>
 					{!error ? (
 						<Box className='latest_article_posts'>
-							<LatestArticlePost allPosts={allPosts} />
-							<PaginationArticle
+							<Box className='latest_article_posts_header'>
+								<Title title='md'>Documentaciones</Title>
+								<Link>Más documentaciones +</Link>
+							</Box>
+							<Box className='latest_article_posts_cards'>
+								<LatestArticlePost allPosts={allPosts} />
+								{/* <PaginationArticle
 								paginationIncrement={paginationIncrement}
 								paginationDecrement={paginationDecrement}
 								pagePagination={pagePagination}
 								allPosts={allPosts}
-							/>
+							/> */}
+							</Box>
 						</Box>
 					) : (
 						<ErrorFailedFetch />

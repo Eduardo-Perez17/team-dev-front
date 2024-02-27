@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
+import { TruncatedTexts } from '../../TruncatedTexts';
 import { ArticlePostsImage } from '../ArticlePostsImage';
 import { Paragraph } from '../../Paragraph';
 import { Title } from '../../Title';
@@ -14,20 +15,26 @@ const LatestArticlePost = ({ allPosts }) => {
 	return (
 		<>
 			{allPosts &&
-				allPosts?.map(post => (
+				allPosts?.map((post, index) => (
 					<React.Fragment key={post.id}>
-						<Link to={`${POSTS}/${post.url}`} className='latest_article_post_link'>
+						<Link
+							to={`${POSTS}/${post.url}`}
+							className='latest_article_post_link'
+						>
 							<Box className='latest_article_post'>
 								<ArticlePostsImage post={post} />
 								<Box className='latest_article_post_content'>
 									<Title title='md'>{post.title}</Title>
 									<Box className='latest_article_post_content_date_tag'>
-										<Paragraph
-											className={`latest_article_post_content tags ${post?.tags?.tag}`}
-										>
-											{post?.tags?.tag}
-										</Paragraph>
-										<Paragraph>{post.updatedAt}</Paragraph>
+										<TruncatedTexts posts={allPosts} index={index} />
+										<Box className='latest_article_post_content_date_tag_info'>
+											<Paragraph
+												className={`latest_article_post_content tags ${post?.tags?.tag}`}
+											>
+												{post?.tags?.tag}
+											</Paragraph>
+											<Paragraph>{post.updatedAt}</Paragraph>
+										</Box>
 									</Box>
 								</Box>
 							</Box>
