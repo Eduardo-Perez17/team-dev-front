@@ -1,10 +1,6 @@
-// Home
-import { LatestArticles } from '../../components/Home';
-
 // Components
-import { LastCourses } from '../../components/Home/LastCourses';
+import { HomeAnalytics } from '../../components/Home/HomeAnalytics';
 import { HeaderHome } from '../../components/Home/HeaderHome';
-import { Title } from '../../components/Title';
 import { Box } from '../../components/Box';
 
 // Styles
@@ -14,12 +10,16 @@ const Home = () => {
 	return (
 		<Box className='home'>
 			<HeaderHome />
-			{/* <Box className='home_content'>
-				<LatestArticles />
-				<LastCourses />
-			</Box> */}
+			<Box className='article_home'>
+				<HomeAnalytics />
+			</Box>
 		</Box>
 	);
 };
 
 export default Home;
+
+// {/* <Box className='home_content'>
+// 				<LatestArticles />
+// 				<LastCourses />
+// 			</Box> */}

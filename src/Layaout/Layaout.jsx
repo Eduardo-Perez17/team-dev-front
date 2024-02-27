@@ -25,12 +25,12 @@ const Layaout = () => {
 				<Box className='grid-son'>
 					<Header />
 					<Outlet />
+					<Box className='container_slider'>
+						<Slider className='slider_one' />
+						<Slider className='slider_two' />
+						<Slider className='slider_three' />
+					</Box>
 				</Box>
-			</Box>
-			<Box className='container_slider'>
-				<Slider className='slider_one' />
-				<Slider className='slider_two' />
-				<Slider className='slider_three' />
 			</Box>
 			<Footer />
 		</>
