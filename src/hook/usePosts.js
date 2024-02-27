@@ -4,7 +4,12 @@ import { useContext, useState } from 'react';
 import { API_PUBLIC } from '../services/api';
 
 // Endpoints
-import { POSTS_ENDPOINT, POSTS_URL_ENDPOINT, POSTS_SAVED_ENDPOINT } from '../utils/constants';
+import {
+	POSTS_ENDPOINT,
+	POSTS_URL_ENDPOINT,
+	POSTS_SAVED_ENDPOINT,
+	POSTS_ANALYTICS_ENDPOINT,
+} from '../utils/constants';
 
 // Helpers
 import { createQueryString } from '../utils/helpers/createQuery';
@@ -19,6 +24,7 @@ export const usePosts = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 
+	const [postsAnalytics, setPostsAnalitycs] = useState();
 	const [postsSearch, setPostsSearch] = useState([]);
 	const [postByUrl, setPostByUrl] = useState({});
 	const [allPosts, setAllPosts] = useState([]);
@@ -43,7 +49,7 @@ export const usePosts = () => {
 
 				setPostsSearch(response);
 				setError(false);
-				return true
+				return true;
 			}
 
 			const query = createQueryString({ page, limit, type });
@@ -85,8 +91,8 @@ export const usePosts = () => {
 				throw new Error(response.message);
 			}
 
-			setPostByUrl(response)
-			return true
+			setPostByUrl(response);
+			return true;
 		} catch (error) {
 			setError(true);
 			throw new Error(error.message);
@@ -114,7 +120,7 @@ export const usePosts = () => {
 
 			setLoading(false);
 			setPost(response);
-			return true
+			return true;
 		} catch (error) {
 			setLoading(false);
 			throw new Error(error.message);
@@ -139,14 +145,37 @@ export const usePosts = () => {
 			}
 
 			setLoading(false);
-			return true
+			return true;
 		} catch (error) {
 			setLoading(false);
 			throw new Error(error.message);
 		} finally {
 			setLoading(false);
 		}
-	}
+	};
+
+	const postAnalytics = async () => {
+		try {
+			const response = await API_PUBLIC({
+				endpoint: `${POSTS_ANALYTICS_ENDPOINT}`,
+				jwt,
+			});
+
+			if (response?.statusCode && response?.statusCode !== 200) {
+				setError(true);
+				setLoading(false);
+				throw new Error(response.message);
+			}
+			
+			setLoading(false);
+			setPostsAnalitycs(response)
+		} catch (error) {
+			setLoading(false);
+			throw new Error(error.message);
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	return {
 		postsSearch,
@@ -154,9 +183,11 @@ export const usePosts = () => {
 		getPostByUrl,
 		editPostById,
 		savedPostById,
+		postAnalytics,
 		allPosts,
 		post,
 		postByUrl,
+		postsAnalytics,
 		error,
 		loading,
 	};

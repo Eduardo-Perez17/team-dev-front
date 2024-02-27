@@ -8,6 +8,7 @@ export { POSTS_ENDPOINT } from './endpoints.constants';
 export { TAGS_ENDPOINT } from './endpoints.constants';
 export { POSTS_URL_ENDPOINT } from './endpoints.constants'
 export { POSTS_SAVED_ENDPOINT } from './endpoints.constants'
+export { POSTS_ANALYTICS_ENDPOINT } from './endpoints.constants'
 
 // Others
 export { sizeElement } from './sizeElements.constants';
