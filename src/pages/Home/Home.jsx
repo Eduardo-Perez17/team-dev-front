@@ -1,4 +1,5 @@
 // Components
+import { LatestArticles } from '../../components/Home/LatestArticle'
 import { HomeAnalytics } from '../../components/Home/HomeAnalytics';
 import { HeaderHome } from '../../components/Home/HeaderHome';
 import { Box } from '../../components/Box';
@@ -12,6 +13,7 @@ const Home = () => {
 			<HeaderHome />
 			<Box className='article_home'>
 				<HomeAnalytics />
+				<LatestArticles />
 			</Box>
 		</Box>
 	);

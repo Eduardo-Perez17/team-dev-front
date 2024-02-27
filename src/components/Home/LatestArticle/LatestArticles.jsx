@@ -22,23 +22,22 @@ import './_latestArticle.scss';
 
 export const LatestArticles = () => {
 	const { getAllPosts, allPosts, loading, error } = usePosts();
-	const [pagePagination, setPagePagination] = useState(1);
+	// const [pagePagination, setPagePagination] = useState(1);
 
-	const paginationIncrement = () => {
-		setPagePagination(pagePagination + 1);
-	};
+	// const paginationIncrement = () => {
+	// 	setPagePagination(pagePagination + 1);
+	// };
 
-	const paginationDecrement = () => {
-		setPagePagination(pagePagination - 1);
-	};
+	// const paginationDecrement = () => {
+	// 	setPagePagination(pagePagination - 1);
+	// };
 
 	useEffect(() => {
 		getAllPosts({
-			page: pagePagination,
-			limit: 7,
+			limit: 6,
 			type: POSTS_TYPE.NORMAL,
 		});
-	}, [pagePagination]);
+	}, []);
 
 	return (
 		<Box className='latest_article'>
@@ -51,12 +50,12 @@ export const LatestArticles = () => {
 					{!error ? (
 						<Box className='latest_article_posts'>
 							<LatestArticlePost allPosts={allPosts} />
-							<PaginationArticle
+							{/* <PaginationArticle
 								paginationIncrement={paginationIncrement}
 								paginationDecrement={paginationDecrement}
 								pagePagination={pagePagination}
 								allPosts={allPosts}
-							/>
+							/> */}
 						</Box>
 					) : (
 						<ErrorFailedFetch />
