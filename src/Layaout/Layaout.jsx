@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 import './_layaout.scss';
 
 // Components
-import { Header, Footer, Slider } from '../components/app';
+import { Header, Footer } from '../components/app';
 import { Box } from '../components';
 
 // Hooks
@@ -25,11 +25,7 @@ const Layaout = () => {
 				<Box className='grid-son'>
 					<Header />
 					<Outlet />
-					<Box className='container_slider'>
-						<Slider className='slider_one' />
-						<Slider className='slider_two' />
-						<Slider className='slider_three' />
-					</Box>
+					
 				</Box>
 			</Box>
 			<Footer />
