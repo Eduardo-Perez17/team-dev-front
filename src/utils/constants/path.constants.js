@@ -9,3 +9,6 @@ export const LOGIN = 'login';
 
 // POSTS
 export const POSTS = 'posts' 
+
+// CONTENT
+export const CONTENT = 'content'

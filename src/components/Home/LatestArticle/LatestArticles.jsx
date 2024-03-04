@@ -6,7 +6,6 @@ import { usePosts } from '../../../hook/usePosts';
 
 // Components
 import { LatestArticlePost } from '../LatestArticlePost';
-import { Button } from '../../Button';
 import { Box } from '../../Box';
 
 // Errors
@@ -16,6 +15,7 @@ import { ErrorFailedFetch } from '../../errors';
 import { Spinning } from '../../Loaders/Spinning';
 
 // Contants
+import { CONTENT } from '../../../utils/constants/path.constants';
 import { POSTS_TYPE } from '../../../utils/constants';
 
 // Styles
@@ -53,7 +53,7 @@ export const LatestArticles = () => {
 						<Box className='latest_article_posts'>
 							<Box className='latest_article_posts_header'>
 								<Title title='md'>Documentaciones</Title>
-								<Link>Más documentaciones +</Link>
+								<Link to={CONTENT}>Más documentaciones +</Link>
 							</Box>
 							<Box className='latest_article_posts_cards'>
 								<LatestArticlePost allPosts={allPosts} />
