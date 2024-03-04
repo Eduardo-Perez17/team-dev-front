@@ -32,6 +32,12 @@
 			grid-gap: 30px;
 			grid-template-columns: repeat(4, 1fr);
 		}
+
+		.latest_article_post_link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 }
 .latest_article_spinning {

@@ -164,7 +164,6 @@ const ModalContent = styled('div')(
 
 		@media screen and (min-width: 420px) and (max-width: 768px) {
 			max-width: 100%;
-			margin: 0 30px;
 		}
 	`,
 );
