@@ -96,7 +96,7 @@
 	color: #00eeff;
 }
 
-.sass, .graphQL {
+.sass, .graphQL, .sql {
 	background-color: #bf407f69;
 	color: #ff399c;
 }
@@ -105,11 +105,16 @@
 	background-color: #fb5bab;
 }
 
-.typescript, .react, .css {
+.typescript, .react, .css, .docker {
 	background-color: #3179c651;
 	color: #1f8bff;
 }
 
 .course_typescript, .course_react, .course_css, .course_sql {
 	background-color: #3798ff;
+}
+
+.node {
+	background-color: #026e0054;
+	color: #049e01;
 }
