@@ -21,7 +21,7 @@
 		display: grid;
 		justify-content: center;
 		align-items: center;
-		grid-gap: 30px;
+		grid-gap: 10px;
 		grid-template-columns: 1fr;
 
 		@media screen and (min-width: $width-tablet-mini) and (max-width: $width-monitor-medium) {
@@ -29,7 +29,6 @@
 		}
 
 		@media screen and (min-width: $width-monitor-medium) {
-			grid-gap: 30px;
 			grid-template-columns: repeat(4, 1fr);
 		}
 

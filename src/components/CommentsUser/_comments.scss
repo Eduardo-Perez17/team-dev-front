@@ -1,0 +1,29 @@
+@import '../../assets/vars.scss';
+
+.comments_main {
+    display: flex;
+    gap: 30px;
+
+    .comments {
+        background-color: $background-dark-more;
+        max-width: 300px;
+        min-width: 200px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 5px 30px $shadow-dark;
+
+        .comments_header {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

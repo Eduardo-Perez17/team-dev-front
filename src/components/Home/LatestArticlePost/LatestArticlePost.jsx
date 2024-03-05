@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Components
 import { TruncatedTexts } from '../../TruncatedTexts';
-import { ArticlePostsImage } from '../ArticlePostsImage';
+import { ImageLoad } from '../../ImageLoad';
 import { Paragraph } from '../../Paragraph';
 import { Title } from '../../Title';
 import { Box } from '../../Box';
@@ -22,7 +22,7 @@ const LatestArticlePost = ({ allPosts }) => {
 							className='latest_article_post_link'
 						>
 							<Box className='latest_article_post'>
-								<ArticlePostsImage post={post} />
+								<ImageLoad image={post?.tags?.tagImage} />
 								<Box className='latest_article_post_content'>
 									<Title title='md'>{post.title}</Title>
 									<Box className='latest_article_post_content_date_tag'>

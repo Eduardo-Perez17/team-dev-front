@@ -45,7 +45,6 @@ export function SearchHeader({ handleClose, open }) {
 		[],
 	);
 
-	// TODO: validar que si no encontro nada, que aparezca el mismo pinguino y el mensaje de not found
 	// TODO: Terminar la parte de information del modal de busqueda
 	return (
 		<div className='header_search_posts'>

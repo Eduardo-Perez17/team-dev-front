@@ -115,3 +115,63 @@
 //     "type": "COURSE",
 //     "tagsId": 18
 // },
+
+
+export const COMMENTS = [
+    {
+        "id": 1,
+        "avatar": null,
+        "firstname": "Juan",
+        "lastname": "Alberto",
+        "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    },
+    {
+        "id": 2,
+        "avatar": null,
+        "firstname": "Mariana",
+        "lastname": "Shelai",
+        "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    },
+    // {
+    //     "id": 3,
+    //     "avatar": null,
+    //     "firstname": "Ibai",
+    //     "lastname": "LLanos",
+    //     "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    // },
+    // {
+    //     "id": 4,
+    //     "avatar": null,
+    //     "firstname": "Raul",
+    //     "lastname": "Hernandez",
+    //     "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    // },
+    // {
+    //     "id": 5,
+    //     "avatar": null,
+    //     "firstname": "Zara",
+    //     "lastname": "Goza",
+    //     "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    // },
+    // {
+    //     "id": 6,
+    //     "avatar": null,
+    //     "firstname": "Eduardo",
+    //     "lastname": "Perez",
+    //     "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    // },
+    // {
+    //     "id": 7,
+    //     "avatar": null,
+    //     "firstname": "Estefania",
+    //     "lastname": "Delgado",
+    //     "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    // },
+    // {
+    //     "id": 8,
+    //     "avatar": null,
+    //     "firstname": "Valeria",
+    //     "lastname": "Zampetti",
+    //     "comment": "Una plataforma increible donde puedo encontrar la mejor documentacion"
+    // },
+]
