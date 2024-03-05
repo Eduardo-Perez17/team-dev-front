@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // Components
-import { ArticlePostsImage } from '../../Home/ArticlePostsImage';
+import { ImageLoad } from '../../ImageLoad';
 import { Paragraph } from '../../Paragraph';
 import { Title } from '../../Title';
 import { Box } from '../../Box';
@@ -24,12 +24,13 @@ export const PostUrlHeader = ({ postByUrl }) => {
 		formatData();
 	}, [postByUrl]);
 
+
 	return (
 		<>
 			{dataPost &&
 				dataPost.map(data => (
 					<Box className='post_header' key={data?.id}>
-						<ArticlePostsImage post={data?.data} />
+						<ImageLoad image={data?.tags?.tagImage} />
 						<Box className='post_header_content'>
 							<Title title='lg' className='post_header_content_title'>{data?.title}</Title>
 							<Box className='post_header_content_info'>

@@ -7,7 +7,7 @@ export const PostUrlContent = ({ postByUrl }) => {
 	// 	className='post_content_item'
 	// />
 
-	console.log({ post: postByUrl?.data?.tags?.tagImage });
+	console.log({ image_tags: postByUrl?.data?.tags?.tagImage });
 
 	return (
 		<div className='post_content_item'>

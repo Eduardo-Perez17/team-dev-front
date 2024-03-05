@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 
 // Components
 import { TruncatedTexts } from '../../TruncatedTexts';
-import { ArticlePostsImage } from '../ArticlePostsImage';
+import { ImageLoad } from '../../ImageLoad';
 import { Paragraph } from '../../Paragraph';
 import { Title } from '../../Title';
 import { Box } from '../../Box';
 
 // Utils
 import { POSTS } from '../../../utils/constants/path.constants';
-
-// TODO: Sacar el ArticlePostsImage en un componente para poder usarlo en todas las imaegnes
 
 const LatestArticlePost = ({ allPosts }) => {
 	return (
@@ -24,7 +22,7 @@ const LatestArticlePost = ({ allPosts }) => {
 							className='latest_article_post_link'
 						>
 							<Box className='latest_article_post'>
-								<ArticlePostsImage post={post} />
+								<ImageLoad image={post?.tags?.tagImage} />
 								<Box className='latest_article_post_content'>
 									<Title title='md'>{post.title}</Title>
 									<Box className='latest_article_post_content_date_tag'>

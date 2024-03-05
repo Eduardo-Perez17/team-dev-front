@@ -1,23 +1,28 @@
+// Styles
+import './_comments.scss'
+
 // Components
-import { Box } from "../Box"
+import { ImageLoad } from "../ImageLoad"
 import { Paragraph } from "../Paragraph"
+import { Title } from "../Title"
+import { Box } from "../Box"
 
 const CommentsUser = ({ comments }) => {
-    console.log({comments})
+
   return (
-    <>
+    <Box className='comments_main'>
         {comments?.map((comment)=> (
-            <Box key={comment?.id}>
-                <Box>
-                    {/* <img src={comment?.avatar} alt="Icono de usuario" /> */}
-                    <h3>{comment?.firstname} {comment?.lastname}</h3>
+            <Box key={comment?.id} className='comments'>
+                <Box className='comments_header'>
+                    <ImageLoad image={comment?.avatar} />
+                    <Title title='md'>{comment?.firstname} {comment?.lastname}</Title>
                 </Box>
-                <Box>
+                <Box className='comments_article'>
                     <Paragraph>{comment?.comment}</Paragraph>
                 </Box>
             </Box>
         ))}
-    </>
+    </Box>
   )
 }
 
