@@ -11,6 +11,8 @@ import { Box } from '../../Box';
 // Utils
 import { POSTS } from '../../../utils/constants/path.constants';
 
+// TODO: Sacar el ArticlePostsImage en un componente para poder usarlo en todas las imaegnes
+
 const LatestArticlePost = ({ allPosts }) => {
 	return (
 		<>
