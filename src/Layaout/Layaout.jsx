@@ -20,16 +20,13 @@ const Layaout = () => {
 	}, []);
 
 	return (
-		<>
-			<Box className='grid-father'>
-				<Box className='grid-son'>
-					<Header />
-					<Outlet />
-					
-				</Box>
+		<Box className='grid-father'>
+			<Box className='grid-son'>
+				<Header />
+				<Outlet />
+				<Footer />
 			</Box>
-			<Footer />
-		</>
+		</Box>
 	);
 };
 

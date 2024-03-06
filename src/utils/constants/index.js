@@ -1,6 +1,9 @@
 // Path
 export { HOME } from './path.constants';
 export { NOT_FOUND } from './path.constants';
+export { MENU } from './path.constants'
+export { SERVICES } from './path.constants'
+export { MORE_CONTENT } from './path.constants'
 
 // Endpoints
 export { LOGIN_ENDPOINT } from './endpoints.constants';

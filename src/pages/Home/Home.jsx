@@ -25,7 +25,7 @@ const Home = () => {
 				<HomeAnalytics />
 				<LatestArticles />
 			</Box>
-			<CommentsUser comments={COMMENTS} />
+			{/* <CommentsUser comments={COMMENTS} /> */}
 		</Box>
 	);
 };
