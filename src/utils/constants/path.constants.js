@@ -11,7 +11,7 @@ export const LOGIN = 'login';
 export const POSTS = 'posts';
 
 // CONTENT
-export const CONTENT = 'content';
+export const CONTENT = 'contenido';
 
 // ADVICE
 export const ADVICE = 'advice'

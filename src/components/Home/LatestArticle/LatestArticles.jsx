@@ -53,7 +53,7 @@ export const LatestArticles = () => {
 						<Box className='latest_article_posts'>
 							<Box className='latest_article_posts_header'>
 								<Title title='md'>Documentaciones</Title>
-								<Link to={CONTENT}>Más documentaciones +</Link>
+								<Link to={CONTENT}>Más contenido +</Link>
 							</Box>
 							<Box className='latest_article_posts_cards'>
 								<LatestArticlePost allPosts={allPosts} />
