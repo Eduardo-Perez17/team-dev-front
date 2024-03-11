@@ -1,6 +1,15 @@
+// Menu
+// import {  } from '../../'
+
+// Components
+import { Box } from '../../components/Box'
+
 const Content = () => {
   return (
-    <h1>Hola mundo</h1>
+    <Box className='content'>
+      <Box className='content_data'></Box>
+      <Box className='content_menu'></Box>
+    </Box>
   )
 }
 
