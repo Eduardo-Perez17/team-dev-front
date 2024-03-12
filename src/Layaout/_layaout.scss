@@ -39,7 +39,7 @@
 	border-radius: 10px;
 	padding: 8px 15px;
 
-	transition: .3s box-shadow ease;
+	transition: 0.3s box-shadow ease;
 }
 
 .header_search_input .header_search_input_item {
@@ -52,9 +52,9 @@
 }
 
 .header_search_input:hover {
-    outline: 0;
-    box-shadow: 0 0 10px rgb(0 153 255/.3);
-    border: 1px solid transparent;
+	outline: 0;
+	box-shadow: 0 0 10px rgb(0 153 255/0.3);
+	border: 1px solid transparent;
 }
 
 .header_search_input .header_search_input_icon {
@@ -71,7 +71,8 @@
 	text-transform: capitalize;
 }
 
-.html, .git {
+.html,
+.git {
 	background-color: #e03e0c47;
 	color: #ff6b3e;
 }
@@ -81,12 +82,14 @@
 	color: #ff3d5a;
 }
 
-.aws, .javascript {
+.aws,
+.javascript {
 	background-color: #ffff0056;
 	color: #ffff00;
 }
 
-.next, .terminal {
+.next,
+.terminal {
 	background-color: #0000005e;
 	color: #ffffff;
 }
@@ -96,25 +99,57 @@
 	color: #00eeff;
 }
 
-.sass, .graphQL, .sql {
+.sass,
+.graphQL,
+.sql {
 	background-color: #bf407f69;
 	color: #ff399c;
 }
 
-.course_sass, .course_graphQL {
+.course_sass,
+.course_graphQL {
 	background-color: #fb5bab;
 }
 
-.typescript, .react, .css, .docker {
+.typescript,
+.react,
+.css,
+.docker {
 	background-color: #3179c651;
 	color: #1f8bff;
 }
 
-.course_typescript, .course_react, .course_css, .course_sql {
+.course_typescript,
+.course_react,
+.course_css,
+.course_sql {
 	background-color: #3798ff;
 }
 
 .node {
 	background-color: #026e0054;
 	color: #049e01;
+}
+
+// Card Post
+.card_post_container {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+
+	@media screen and (min-width: $width-tablet-mini) and (max-width: $width-monitor-medium) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (min-width: $width-monitor-medium) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.latest_article_post_link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }

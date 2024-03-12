@@ -1,27 +1,69 @@
 @import '../../assets/vars.scss';
 
 .content {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 
-    .content_menu {
-        background-color: $background-dark-more;
-        padding: 35px 30px;
-        border-radius: 10px;
-        box-shadow: 1px 20px 20px $shadow-dark;
-        height: 100%;
+	.content_menu {
+		background-color: $background-dark-more;
+		padding: 35px 30px;
+		border-radius: 10px;
+		box-shadow: 1px 20px 20px $shadow-dark;
+		height: 100%;
+		max-height: 200px;
+		position: sticky;
+		top: 30px;
 
-        .content_menu_nav {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            .content_menu_item {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                justify-content: flex-start;
-                cursor: pointer;
-            }
-        }
-    }
+		.content_menu_nav {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			.content_menu_item {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				justify-content: flex-start;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.content_data {
+		.content_data_item {
+			display: flex;
+			gap: 20px;
+			flex-wrap: wrap;
+			.card_post_container {
+				@media screen and (min-width: $width-monitor-medium) {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+
+			.content_data_tags {
+				padding: 10px 20px;
+				min-width: 280px;
+				max-width: 280px;
+				max-height: 90px;
+				background-color: $background-dark-more;
+				border-radius: 10px;
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				img {
+					width: 50px;
+				}
+
+				.content_data_tags_article {
+					display: flex;
+                    align-items: center;
+                    justify-content: center;
+					gap: 10px;
+				}
+
+                .tags {
+                    font-size: 18px;
+                }
+			}
+		}
+	}
 }

@@ -11,39 +11,39 @@ import { useTags } from '../../hook/useTags';
 import { POSTS_TYPE } from '../../utils/constants';
 
 // Components
-import { ContentData, ContentMenu } from '../../components/Content'
+import { ContentData, ContentMenu } from '../../components/Content';
 import { Box } from '../../components/Box';
 
 const Content = () => {
 	const { allPosts, getAllPosts } = usePosts();
-  const { allTags, getAllTags } = useTags()
-  const [sawTecnology, setSawTecnology] = useState(false)
+	const { allTags, getAllTags } = useTags();
+	const [sawTecnology, setSawTecnology] = useState(false);
 
-  // POST TYPE COURSE
+	// POST TYPE COURSE
 	const getPostsTypeCourse = () => {
 		getAllPosts({
 			page: 1,
 			limit: 7,
 			type: POSTS_TYPE.COURSE,
 		});
-    setSawTecnology(false)
+		setSawTecnology(false);
 	};
 
-  // POST TYPE NORMAL
-  const getPostTypeNormal = () => {
-    getAllPosts({
+	// POST TYPE NORMAL
+	const getPostTypeNormal = () => {
+		getAllPosts({
 			page: 1,
 			limit: 7,
 			type: POSTS_TYPE.NORMAL,
 		});
-    setSawTecnology(false)
-  }
+		setSawTecnology(false);
+	};
 
-  // TECNOLOGY
-  const getAllTecnology = () => {
-    getAllTags()
-    setSawTecnology(true)
-  }
+	// TECNOLOGY
+	const getAllTecnology = () => {
+		getAllTags();
+		setSawTecnology(true);
+	};
 
 	useEffect(() => {
 		getAllPosts({
@@ -56,11 +56,19 @@ const Content = () => {
 	return (
 		<Box className='content'>
 			<Box className='content_data'>
-        <ContentData allPosts={allPosts} allTags={allTags} sawTecnology={sawTecnology}  />
-      </Box>
+				<ContentData
+					allPosts={allPosts}
+					allTags={allTags}
+					sawTecnology={sawTecnology}
+				/>
+			</Box>
 			<Box className='content_menu'>
-        <ContentMenu getCourse={getPostsTypeCourse} getNormal={getPostTypeNormal} getTecnology={getAllTecnology} />
-      </Box>
+				<ContentMenu
+					getCourse={getPostsTypeCourse}
+					getNormal={getPostTypeNormal}
+					getTecnology={getAllTecnology}
+				/>
+			</Box>
 		</Box>
 	);
 };

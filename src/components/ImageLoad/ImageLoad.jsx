@@ -4,7 +4,6 @@ import { MINI_DEV } from '../../utils/images';
 import { Box } from '../Box';
 
 const ImageLoad = ({ image }) => {
-	
 	return (
 		<Box className='latest_article_post_image'>
 			{image ? (

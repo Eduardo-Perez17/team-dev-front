@@ -6,6 +6,7 @@ import { usePosts } from '../../../hook/usePosts';
 
 // Components
 import { CardPost } from '../../CardPost';
+import { Title } from '../../Title';
 import { Box } from '../../Box';
 
 // Errors
@@ -20,7 +21,6 @@ import { POSTS_TYPE } from '../../../utils/constants';
 
 // Styles
 import './_latestArticle.scss';
-import { Title } from '../../Title';
 
 export const LatestArticles = () => {
 	const { getAllPosts, allPosts, loading, error } = usePosts();
@@ -55,7 +55,7 @@ export const LatestArticles = () => {
 								<Title title='md'>Documentaciones</Title>
 								<Link to={CONTENT}>Más contenido +</Link>
 							</Box>
-							<Box className='latest_article_posts_cards'>
+							<Box className='card_post_container'>
 								<CardPost allPosts={allPosts} completeRoute={true} />
 								{/* <PaginationArticle
 								paginationIncrement={paginationIncrement}

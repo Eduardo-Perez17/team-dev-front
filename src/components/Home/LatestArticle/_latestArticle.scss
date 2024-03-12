@@ -17,27 +17,6 @@
 		align-items: center;
 	}
 
-	.latest_article_posts_cards {
-		display: grid;
-		justify-content: center;
-		align-items: center;
-		grid-gap: 10px;
-		grid-template-columns: 1fr;
-
-		@media screen and (min-width: $width-tablet-mini) and (max-width: $width-monitor-medium) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		@media screen and (min-width: $width-monitor-medium) {
-			grid-template-columns: repeat(4, 1fr);
-		}
-
-		.latest_article_post_link {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	}
 }
 .latest_article_spinning {
 	display: flex;

@@ -13,8 +13,6 @@ import { POSTS, CONTENT } from '../../utils/constants/path.constants';
 
 const CardPost = ({ allPosts, completeRoute }) => {
 
-	console.log({allPosts})
-
 	return (
 		<>
 			{allPosts &&
