@@ -1,18 +1,14 @@
 // Components
 import { Box } from '../../Box';
+import { CardPost } from '../../CardPost';
 
 export const ContentData = ({ allPosts, allTags, sawTecnology }) => {
-
-  console.log(allTags)
+	console.log({ allPosts });
 
 	return (
 		<Box className='content_data_item'>
 			{!sawTecnology ? (
-				<>
-					{allPosts.map(post => (
-						<h1 key={post?.id}>{post?.title}</h1>
-					))}
-				</>
+				<CardPost allPosts={allPosts} />
 			) : (
 				<>
 					{allTags.map(tags => (

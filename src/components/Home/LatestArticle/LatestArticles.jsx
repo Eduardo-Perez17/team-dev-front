@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { usePosts } from '../../../hook/usePosts';
 
 // Components
-import { LatestArticlePost } from '../LatestArticlePost';
+import { CardPost } from '../../CardPost';
 import { Box } from '../../Box';
 
 // Errors
@@ -56,7 +56,7 @@ export const LatestArticles = () => {
 								<Link to={CONTENT}>Más contenido +</Link>
 							</Box>
 							<Box className='latest_article_posts_cards'>
-								<LatestArticlePost allPosts={allPosts} />
+								<CardPost allPosts={allPosts} completeRoute={true} />
 								{/* <PaginationArticle
 								paginationIncrement={paginationIncrement}
 								paginationDecrement={paginationDecrement}
