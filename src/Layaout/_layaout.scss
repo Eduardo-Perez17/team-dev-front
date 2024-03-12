@@ -72,12 +72,17 @@
 }
 
 .html,
-.git {
+.git,
+.svelte {
 	background-color: #e03e0c47;
 	color: #ff6b3e;
 }
 
-.nest {
+.nest,
+.jest,
+.astro,
+.angular,
+.orm {
 	background-color: #ed294647;
 	color: #ff3d5a;
 }
@@ -89,12 +94,16 @@
 }
 
 .next,
-.terminal {
+.terminal,
+.prettier {
 	background-color: #0000005e;
 	color: #ffffff;
 }
 
-.cypress {
+.cypress,
+.web,
+.eslint,
+.vue {
 	background-color: #00778049;
 	color: #00eeff;
 }
