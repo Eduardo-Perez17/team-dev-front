@@ -1,0 +1,27 @@
+@import '../../assets/vars.scss';
+
+.content {
+    display: flex;
+    justify-content: space-between;
+
+    .content_menu {
+        background-color: $background-dark-more;
+        padding: 35px 30px;
+        border-radius: 10px;
+        box-shadow: 1px 20px 20px $shadow-dark;
+        height: 100%;
+
+        .content_menu_nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .content_menu_item {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: flex-start;
+                cursor: pointer;
+            }
+        }
+    }
+}

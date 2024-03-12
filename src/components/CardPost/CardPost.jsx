@@ -2,23 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import { TruncatedTexts } from '../../TruncatedTexts';
-import { ImageLoad } from '../../ImageLoad';
-import { Paragraph } from '../../Paragraph';
-import { Title } from '../../Title';
-import { Box } from '../../Box';
+import { TruncatedTexts } from '../TruncatedTexts';
+import { ImageLoad } from '../ImageLoad';
+import { Paragraph } from '../Paragraph';
+import { Title } from '../Title';
+import { Box } from '../Box';
 
 // Utils
-import { POSTS } from '../../../utils/constants/path.constants';
+import { POSTS, CONTENT } from '../../utils/constants/path.constants';
 
-const LatestArticlePost = ({ allPosts }) => {
+const CardPost = ({ allPosts, completeRoute }) => {
+
+	console.log({allPosts})
+
 	return (
 		<>
 			{allPosts &&
 				allPosts?.map((post, index) => (
 					<React.Fragment key={post.id}>
 						<Link
-							to={`${POSTS}/${post.url}`}
+							to={completeRoute ? `${CONTENT}/${POSTS}/${post.url}` : `${POSTS}/${post.url}`}
 							className='latest_article_post_link'
 						>
 							<Box className='latest_article_post'>
@@ -45,4 +48,4 @@ const LatestArticlePost = ({ allPosts }) => {
 	);
 };
 
-export default LatestArticlePost;
+export default CardPost;

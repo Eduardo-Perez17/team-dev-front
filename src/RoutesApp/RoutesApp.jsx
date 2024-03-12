@@ -15,7 +15,7 @@ const RoutesApp = () => {
 			<Routes>
 				<Route path={HOME} element={<Layaout />}>
 					<Route path={HOME} element={<Home />} />
-					<Route path={`${POSTS}/:slug`} element={<Posts />} />
+					<Route path={`${CONTENT}/${POSTS}/:slug`} element={<Posts />} />
 					<Route path={CONTENT} element={<Content />} />
 					<Route path={LOGIN} element={<Login />} />
 					<Route path={NOT_FOUND} element={<NotFound />} />
