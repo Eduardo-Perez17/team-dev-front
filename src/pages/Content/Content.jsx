@@ -19,24 +19,20 @@ const Content = () => {
 	const { allTags, getAllTags } = useTags();
 
 	const [sawTecnology, setSawTecnology] = useState(false);
-	const [pagePagination, setPagePagination] = useState(1);
-
 
 	// POST TYPE COURSE
-	const getPostsTypeCourse = () => {
+	const getPostsTypeCourse = ({ limit }) => {
 		getAllPosts({
-			page: pagePagination,
-			limit: 7,
+			limit: limit,
 			type: POSTS_TYPE.COURSE,
 		});
 		setSawTecnology(false);
 	};
 
 	// POST TYPE NORMAL
-	const getPostTypeNormal = () => {
+	const getPostTypeNormal = ({ limit }) => {
 		getAllPosts({
-			page: pagePagination,
-			limit: 7,
+			limit: limit,
 			type: POSTS_TYPE.NORMAL,
 		});
 		setSawTecnology(false);
@@ -50,32 +46,10 @@ const Content = () => {
 
 	useEffect(() => {
 		getAllPosts({
-			page: pagePagination,
-			limit: 7,
+			limit: 6,
 			type: POSTS_TYPE.NORMAL,
 		});
 	}, []);
-
-	// ! ==============================================================
-
-
-	const paginationIncrement = () => {
-		setPagePagination(pagePagination + 1);
-	};
-
-	const paginationDecrement = () => {
-		setPagePagination(pagePagination - 1);
-	};
-
-	// useEffect(() => {
-	// 	getAllPosts({
-	// 		page: pagePagination,
-	// 		limit: 7,
-	// 		type: POSTS_TYPE.NORMAL,
-	// 	});
-	// }, [pagePagination]);
-
-	// ! ==============================================================
 
 	return (
 		<Box className='content'>
@@ -84,10 +58,6 @@ const Content = () => {
 					allPosts={allPosts}
 					allTags={allTags}
 					sawTecnology={sawTecnology}
-
-					paginationIncrement={paginationIncrement}
-					paginationDecrement={paginationDecrement}
-					pagePagination={pagePagination}
 				/>
 			</Box>
 			<Box className='content_menu'>

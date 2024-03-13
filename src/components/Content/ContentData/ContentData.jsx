@@ -1,17 +1,10 @@
 // Components
-import { PaginationArticle } from '../../Home/PaginationArticle';
+// import { PaginationArticle } from '../../Home/PaginationArticle';
 import { ImageLoad } from '../../ImageLoad';
 import { CardPost } from '../../CardPost';
 import { Box } from '../../Box';
 
-export const ContentData = ({
-	allPosts,
-	allTags,
-	sawTecnology,
-	paginationIncrement,
-	paginationDecrement,
-	pagePagination,
-}) => {
+export const ContentData = ({ allPosts, allTags, sawTecnology }) => {
 	return (
 		<Box className='content_data_item'>
 			{!sawTecnology ? (
@@ -19,12 +12,6 @@ export const ContentData = ({
 					<Box className='card_post_container'>
 						<CardPost allPosts={allPosts} />
 					</Box>
-					<PaginationArticle
-						paginationIncrement={paginationIncrement}
-						paginationDecrement={paginationDecrement}
-						pagePagination={pagePagination}
-						allPosts={allPosts}
-					/>
 				</>
 			) : (
 				<>
