@@ -17,23 +17,22 @@ import { Box } from '../../components/Box';
 const Content = () => {
 	const { allPosts, getAllPosts } = usePosts();
 	const { allTags, getAllTags } = useTags();
+
 	const [sawTecnology, setSawTecnology] = useState(false);
 
 	// POST TYPE COURSE
-	const getPostsTypeCourse = () => {
+	const getPostsTypeCourse = ({ limit }) => {
 		getAllPosts({
-			page: 1,
-			limit: 7,
+			limit: limit,
 			type: POSTS_TYPE.COURSE,
 		});
 		setSawTecnology(false);
 	};
 
 	// POST TYPE NORMAL
-	const getPostTypeNormal = () => {
+	const getPostTypeNormal = ({ limit }) => {
 		getAllPosts({
-			page: 1,
-			limit: 7,
+			limit: limit,
 			type: POSTS_TYPE.NORMAL,
 		});
 		setSawTecnology(false);
@@ -47,8 +46,7 @@ const Content = () => {
 
 	useEffect(() => {
 		getAllPosts({
-			page: 1,
-			limit: 7,
+			limit: 6,
 			type: POSTS_TYPE.NORMAL,
 		});
 	}, []);
